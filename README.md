@@ -2,6 +2,7 @@
 2020/6/19ビットコインとか勉強会c-lightningハンズオン
 
 ~/.lightning/config
+を編集します。
 
 ```
 alias=Aquamarine
