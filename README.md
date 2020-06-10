@@ -1,8 +1,86 @@
 # c-lightning-handson
 2020/6/19ビットコインとか勉強会c-lightningハンズオン
 
+## bitcoindをSignetで対応でインストール
+
+必要なライブラリをインストール（Macの場合）
+```
+$ brew install autoconf automake libtool berkeley-db4 boost miniupnpc openssl pkg-config protobuf qt
+```
+
+必要なライブラリをインストール（Ubuntuの場合）
+```
+$ sudo apt-get install autoconf build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
+$ sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
+
+$ sudo add-apt-repository ppa:bitcoin/bitcoin
+$ sudo apt-get update
+
+$ sudo apt-get install libdb4.8-dev libdb4.8++-dev
+$ sudo apt-get install libminiupnpc-dev
+$ sudo apt-get install libzmq3-dev
+```
+
+```
+$ git clone https://github.com/bitcoin/bitcoin
+$ cd bitcoin
+```
+
+既にbitcoinブランチがある場合は
+
+```
+$ cd bitcoin
+$ git pull
+```
+
+```
+$ git fetch origin pull/16411/head:signet
+```
+
+```
+$ git checkout signet
+```
+
+signetブランチになっていることを確認
+```
+$ git branch
+  master
+* signet
+```
+
+```
+$ ./autogen.sh
+$ ./configure
+$ make
+$ sudo make install
+```
+
+```
+$ nano "/Users/${USER}/Library/Application Support/Bitcoin/bitcoin.conf"
+```
+
+```
+signet=1
+txindex=1
+server=1
+daemon=1
+rpcuser=hoge
+rpcpassword=hoge
+[signet]
+rpcport=38332
+port=38333
+```
+
+c-lightning公式ドキュメントに沿ってインストール
+Macの場合
+https://github.com/ElementsProject/lightning/blob/master/doc/INSTALL.md#to-build-on-macos
+
+Ubuntuの場合
+https://github.com/ElementsProject/lightning/blob/master/doc/INSTALL.md#to-build-on-ubuntu
+
+インストールが終わったら
 ~/.lightning/config
-を編集します。
+を作成します。
 
 ```
 alias=Aquamarine
