@@ -21,6 +21,7 @@ $ sudo apt-get install libminiupnpc-dev
 $ sudo apt-get install libzmq3-dev
 ```
 
+ここからは共通
 ```
 $ git clone https://github.com/bitcoin/bitcoin
 $ cd bitcoin
@@ -55,8 +56,14 @@ $ make
 $ sudo make install
 ```
 
+Macでbitcoin.confを編集
 ```
 $ nano "/Users/${USER}/Library/Application Support/Bitcoin/bitcoin.conf"
+```
+
+Ubuntuでbitcoin.confを編集
+```
+$ nano ~/.bitcoin/bitcoin.conf
 ```
 
 ```
