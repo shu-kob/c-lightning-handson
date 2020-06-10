@@ -79,10 +79,13 @@ port=38333
 ```
 
 c-lightning公式ドキュメントに沿ってインストール
+
 Macの場合
+
 https://github.com/ElementsProject/lightning/blob/master/doc/INSTALL.md#to-build-on-macos
 
 Ubuntuの場合
+
 https://github.com/ElementsProject/lightning/blob/master/doc/INSTALL.md#to-build-on-ubuntu
 
 インストールが終わったら
