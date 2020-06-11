@@ -21,7 +21,7 @@ $ sudo apt-get install libminiupnpc-dev
 $ sudo apt-get install libzmq3-dev
 ```
 
-ここからは共通
+Mac, Ubuntu共通
 ```
 $ git clone https://github.com/bitcoin/bitcoin
 $ cd bitcoin
@@ -33,6 +33,8 @@ $ cd bitcoin
 $ cd bitcoin
 $ git pull
 ```
+
+git cloneした場合も、既にbitcoinブランチがあってpullした場合も共通
 
 ```
 $ git fetch origin pull/16411/head:signet
