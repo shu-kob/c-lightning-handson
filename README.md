@@ -53,7 +53,7 @@ $ git branch
 
 ```
 $ ./autogen.sh
-$ ./configure
+$ ./configure --without-gui
 $ make
 $ sudo make install
 ```
