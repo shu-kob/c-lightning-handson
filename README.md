@@ -38,9 +38,6 @@ git cloneした場合も、既にbitcoinブランチがあってpullした場合
 
 ```
 $ git fetch origin pull/16411/head:signet
-```
-
-```
 $ git checkout signet
 ```
 
