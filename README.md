@@ -5,11 +5,13 @@
 
 必要なライブラリをインストール（Macの場合）
 ```
+$ brew upgrade
 $ brew install autoconf automake libtool berkeley-db4 boost miniupnpc openssl pkg-config protobuf qt
 ```
 
 必要なライブラリをインストール（Ubuntuの場合）
 ```
+$ sudo apt-get update
 $ sudo apt-get install autoconf build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
 $ sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
 
