@@ -27,7 +27,7 @@ $ git clone https://github.com/bitcoin/bitcoin
 $ cd bitcoin
 ```
 
-既にbitcoinブランチがある場合は
+既にbitcoinリポジトリがある場合は
 
 ```
 $ cd bitcoin
