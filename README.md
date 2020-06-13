@@ -53,7 +53,7 @@ $ git branch
 
 ```
 $ ./autogen.sh
-$ ./configure --without-gui CXXFLAGS="--param ggc-min-expand=1 --param ggc-min-heapsize=32768"
+$ ./configure
 $ make
 $ sudo make install
 ```
