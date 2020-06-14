@@ -6,7 +6,7 @@
 必要なライブラリをインストール（Macの場合）
 ```
 $ brew upgrade
-$ brew install autoconf automake libtool berkeley-db4 boost miniupnpc openssl pkg-config protobuf qt
+$ brew install automake berkeley-db4 libtool boost miniupnpc pkg-config python qt libevent qrencode librsvg
 ```
 
 必要なライブラリをインストール（Ubuntuの場合）
