@@ -6,7 +6,7 @@
 必要なライブラリをインストール（Macの場合）
 ```
 $ brew upgrade
-$ brew install automake berkeley-db4 libtool boost miniupnpc pkg-config python qt libevent qrencode librsvg
+$ brew install automake berkeley-db4 libtool boost miniupnpc pkg-config python qt libevent qrencode
 ```
 
 必要なライブラリをインストール（Ubuntuの場合）
