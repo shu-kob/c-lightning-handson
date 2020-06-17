@@ -1,68 +1,21 @@
 # c-lightning-handson
 2020/6/19ビットコインとか勉強会c-lightningハンズオン
 
-## bitcoindをSignetで対応でインストール
-
-必要なライブラリをインストール（Macの場合）
-```
-$ brew upgrade
-$ brew install automake berkeley-db4 libtool boost miniupnpc pkg-config python qt libevent qrencode
-```
-
-必要なライブラリをインストール（Ubuntuの場合）
-```
-$ sudo apt-get update
-$ sudo apt-get install autoconf build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
-$ sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
-
-$ sudo add-apt-repository ppa:bitcoin/bitcoin
-$ sudo apt-get update
-
-$ sudo apt-get install libdb4.8-dev libdb4.8++-dev
-$ sudo apt-get install libminiupnpc-dev
-$ sudo apt-get install libzmq3-dev
-```
-
-Mac, Ubuntu共通
-```
-$ git clone https://github.com/bitcoin/bitcoin
-$ cd bitcoin
-```
-
-既にbitcoinリポジトリがある場合は
+## Signet対応のbitcoindとc-lightningをDockerでインストール
 
 ```
-$ cd bitcoin
-$ git pull
+git clone https://github.com/shu-kob/c-lightning-handson
+cd c-lightning-handson
+./build.sh
 ```
 
-git cloneした場合も、既にbitcoinブランチがあってpullした場合も共通
+## ビルドが終わったら起動
 
 ```
-$ git fetch origin pull/16411/head:signet
-$ git checkout signet
+./run.sh 
 ```
 
-signetブランチになっていることを確認
-```
-$ git branch
-  master
-* signet
-```
-
-```
-$ ./autogen.sh
-$ ./configure --without-gui
-$ make
-$ sudo make install
-```
-
-Macでbitcoin.confを編集
-```
-$ nano "/Users/${USER}/Library/Application Support/Bitcoin/bitcoin.conf"
-```
-
-Ubuntuでbitcoin.confを編集
+bitcoin.confを編集
 ```
 $ nano ~/.bitcoin/bitcoin.conf
 ```
@@ -79,7 +32,7 @@ rpcport=38332
 port=38333
 ```
 
-c-lightning公式ドキュメントに沿ってインストール
+参考）c-lightning公式ドキュメントに沿ってインストール
 
 Macの場合
 
