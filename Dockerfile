@@ -1,4 +1,4 @@
-FROM debian:stretch-slim as builder
+FROM ubuntu:18.04
 
 RUN apt-get update -y \
     && apt-get install -y \
@@ -46,32 +46,17 @@ RUN V=1 make -j2
 
 RUN make install
 
-FROM debian:stretch-slim
-
-RUN apt-get update -y \
-    && apt-get install -y \
-        curl \
-        libboost-chrono1.62.0 \
-        libboost-filesystem1.62.0 \
-        libboost-system1.62.0 \
-        libboost-thread1.62.0 \
-        libevent-2.0-5 \
-        libevent-pthreads-2.0-5 \
-        libminiupnpc10 \
-        libssl1.1 \
-        libzmq5 \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-COPY --from=builder "/workspace/build/bin" /usr/local/bin
-
-COPY --from=builder /workspace/contrib /workspace/contrib
-
 ENV BITCOIN_VERSION=0.20.0
 ENV BITCOIN_DATA=/root/.bitcoin
 ENV PATH=/workspace/contrib/signet:$PATH
 
 RUN mkdir -p ${BITCOIN_DATA}
+
+COPY ./bitcoin.conf /root/.bitcoin/bitcoin.conf
+
+COPY ./config /root/.lightning/config
+
+COPY ./start_lightning.sh /root/lightning/start_lightning.sh
 
 COPY docker-entrypoint.sh /entrypoint.sh
 
@@ -79,9 +64,7 @@ EXPOSE 8332 8333 18332 18333 18443 18444 38332 38333
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["bitcoind", "-signet"]
-
-FROM debian:stretch-slim
+CMD ["bitcoind", "-signet", "-txindex"]
 
 RUN apt-get update -y \
     && apt-get install -y \
@@ -104,8 +87,8 @@ RUN apt-get update -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN git clone https://github.com/ElementsProject/lightning.git
-WORKDIR /lightning/
+RUN git clone https://github.com/ElementsProject/lightning.git /lightning
+WORKDIR /lightning
 RUN git checkout -b v0.8.2
 
 RUN pip3 install -r requirements.txt
@@ -115,3 +98,7 @@ RUN make
 RUN make install
 
 RUN cp cli/lightning-cli /usr/local/bin/
+
+ENV LIGHTNING_DATA=/root/.lightning
+
+RUN mkdir -p ${LIGHTNING_DATA}
