@@ -15,6 +15,11 @@ cd c-lightning-handson
 ./run.sh 
 ```
 
+Dockerの中に入る
+```
+docker exec -i -t コンテナ名 bash
+```
+
 bitcoin.confを編集
 ```
 $ nano ~/.bitcoin/bitcoin.conf
