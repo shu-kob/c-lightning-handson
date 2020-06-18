@@ -15,7 +15,7 @@ cd c-lightning-handson
 ./run.sh 
 ```
 
-Dockerの中を操作するためコンテナのIDを取得
+別ターミナルを開き、Dockerの中を操作するためコンテナのIDを取得
 
 ```
 docker ps
@@ -41,6 +41,7 @@ bitcoindの状態を確認
 bcli getblockchaininfo
 ```
 ブロックチェーンエクスプローラとブロック高が一致すれば同期完了
+
 https://explorer.bc-2.jp/
 
 c-lightningを起動する
@@ -63,7 +64,7 @@ docker exec -i -t $ID bash
 
 参考）
 ~/.lightning/config
-でLightning Nodeのエイリアスと色を設定できます。
+でLightning Nodeのエイリアスと色を設定できる
 
 例）
 ```
@@ -72,7 +73,7 @@ rgb=7FFFD4
 network=signet
 ```
 
-c-lightningウォレットに入金するため、アドレスを発行します。
+c-lightningウォレットに入金するため、アドレスを発行
 
 ```
 $ lcli newaddr
@@ -82,14 +83,15 @@ $ lcli newaddr
 }
 ```
 
-Signet Faucetに上記で得たアドレスをコピペして、Signet用BTCを入手します。
+Signet Faucetに上記で得たアドレスをコピペして、Signet用BTCを入手
 
 https://signet.bc-2.jp/
 
-TXをExplorerで確認してみましょう。
+TXをExplorerで確認
+
 https://explorer.bc-2.jp/
 
-listfundsコマンドのoutputsがconfirmedされたらfundchannelでチャンネルを開けます。
+listfundsコマンドのoutputsがconfirmedされたらfundchannelでチャンネルを開ける
 
 ```
 $ lcli listfunds
@@ -149,16 +151,7 @@ $ lcli listfunds
 }
 ```
 
-```
-$ lcli fundchannel 03e0bcd5e2d8fe663c54b8c129d277812bfa3fbd62dcd1424c21a28bdc6e51f632 100000
-{
-   "tx": "0200000000010101a1837f1ff8ab00b2029822597435f5fa18ec052d7770023369751b7f27b25c0100000000feffffff02a086010000000000220020155eff4d34ad33683b56974b287675d828af0a92b0f05c26ba9f29b778848736b747f10500000000160014d943a1df3ec162d77b9e10ce4780bb687b6cf0bb0247304402204f85f7162a9d86023f05513dc2f7e15b0bf0f7d00ac3cfa8922bbe5df9634e150220184b39b9aeba1ec13d6f0411c0f5f7b6f2c6d20b3c33fcc4b4eb290baf4d176a012102f45c34a953d45b600422c565a5f2b611293035f0c31bc2b1c8afa5578ba9539700000000",
-   "txid": "8db0f3db78d7316d9981501fa37dcba548931fe700c878830a2ff6ec31d1f68d",
-   "channel_id": "8df6d131ecf62f0a8378c800e71f9348a5cb7da31f5081996d31d778dbf3b08d"
-}
-```
-
-チャンネルを貼るため、ネットワーク上のノードを見つけます。
+チャンネルを貼るため、ネットワーク上のノードを見つける
 
 ```
 $ lcli listnodes
@@ -189,8 +182,8 @@ $ lcli listnodes
    ]
 }
 ```
-ノードに接続します。（BTCは消費しません）
-IPアドレスが表示されているもののほうが接続しやすいです。
+ノードに接続（BTCは消費しない）
+IPアドレスが表示されているもののほうが接続しやすい
 ```
 $ lcli connect 03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a@2001:268:c0e4:ae82:29e7:b9bb:2c03:b22d:9735
 {
@@ -199,7 +192,17 @@ $ lcli connect 03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55
 }
 ```
 
-接続先のIDが返ってきたので接続成功です！
+接続先のIDが返ってきたら接続成功
+
+
+```
+$ lcli fundchannel 03e0bcd5e2d8fe663c54b8c129d277812bfa3fbd62dcd1424c21a28bdc6e51f632 100000
+{
+   "tx": "0200000000010101a1837f1ff8ab00b2029822597435f5fa18ec052d7770023369751b7f27b25c0100000000feffffff02a086010000000000220020155eff4d34ad33683b56974b287675d828af0a92b0f05c26ba9f29b778848736b747f10500000000160014d943a1df3ec162d77b9e10ce4780bb687b6cf0bb0247304402204f85f7162a9d86023f05513dc2f7e15b0bf0f7d00ac3cfa8922bbe5df9634e150220184b39b9aeba1ec13d6f0411c0f5f7b6f2c6d20b3c33fcc4b4eb290baf4d176a012102f45c34a953d45b600422c565a5f2b611293035f0c31bc2b1c8afa5578ba9539700000000",
+   "txid": "8db0f3db78d7316d9981501fa37dcba548931fe700c878830a2ff6ec31d1f68d",
+   "channel_id": "8df6d131ecf62f0a8378c800e71f9348a5cb7da31f5081996d31d778dbf3b08d"
+}
+```
 
 ```
 $ lcli listpeers
