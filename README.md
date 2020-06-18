@@ -16,6 +16,12 @@ cd c-lightning-handson
 ```
 
 Dockerの中に入る
+
+```
+docker ps
+```
+でコンテナ名を取得
+
 ```
 docker exec -i -t コンテナ名 bash
 ```
