@@ -1,1 +1,0 @@
-./lightningd/lightningd --log-level=debug >> /.lightning/debug.log &
