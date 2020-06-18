@@ -15,32 +15,35 @@ cd c-lightning-handson
 ./run.sh 
 ```
 
-Dockerの中に入る
-
 ```
 docker ps
 ```
-でコンテナ名を取得
 
 ```
-docker exec -i -t コンテナ名 bash
+ID=XXX
+```
+```
+alias bcli="docker exec $ID bitcoin-cli"
+alias lnli="docker exec $ID lightning-cli"
 ```
 
-bitcoin.confを編集
-```
-$ nano ~/.bitcoin/bitcoin.conf
-```
+bitcoindの状態を確認
 
 ```
-signet=1
-txindex=1
-server=1
-daemon=1
-rpcuser=hoge
-rpcpassword=hoge
-[signet]
-rpcport=38332
-port=38333
+bcli getblockchaininfo
+```
+https://explorer.bc-2.jp/
+
+Lightningノードの状態を確認
+
+```
+lici getinfo
+```
+
+Dockerの中に入る
+
+```
+docker exec -i -t ID bash
 ```
 
 参考）c-lightning公式ドキュメントに沿ってインストール
@@ -53,16 +56,13 @@ Ubuntuの場合
 
 https://github.com/ElementsProject/lightning/blob/master/doc/INSTALL.md#to-build-on-ubuntu
 
-インストールが終わったら
 ~/.lightning/config
-を作成します。
+でLightning Nodeのエイリアスと色を設定できます。
 
+例）
 ```
 alias=Aquamarine
 rgb=7FFFD4
-#network=bitcoin
-#network=testnet
-#network=regtest
 network=signet
 ```
 
