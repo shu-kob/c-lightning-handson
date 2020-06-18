@@ -94,63 +94,34 @@ https://explorer.bc-2.jp/
 
 listfundsコマンドのoutputsがconfirmedされたらfundchannelでチャンネルを開ける
 
+承認前
+
 ```
 lcli listfunds
 {
-   "outputs": [
-      {
-         "txid": "5cb2277f1b7569330270772d05ec18faf5357459229802b200abf81f7f83a101",
-         "output": 1,
-         "value": 99798769,
-         "amount_msat": "99798769000msat",
-         "address": "sb1qds0ad9en4ef5ynecvqpspz70lxsarw5uaknakp",
-         "status": "confirmed",
-         "blockheight": 13043
-      },
-      {
-         "txid": "00448232dc6acbf8c4a52258339bff36e478fa11b809df8c76007749d6e798ef",
-         "output": 0,
-         "value": 99817,
-         "amount_msat": "99817000msat",
-         "address": "sb1q5r46nlkqkhgtvd05aauv7gt73adw6eswl8eszd",
-         "status": "confirmed",
-         "blockheight": 13043
-      },
-      {
-         "txid": "4669a808bc261e44548603fea1abc4927e7b7e344ef1dbac77195ee3da00fd83",
-         "output": 0,
-         "value": 99817,
-         "amount_msat": "99817000msat",
-         "address": "sb1qeekv4h2c3wvaknhyzn2d73s07j8nq9vh789aec",
-         "status": "confirmed",
-         "blockheight": 13532
-      },
-      {
-         "txid": "bdece94d394a54952cd62755a6a774597bffcb311c3ad6f597a2787c124949ba",
-         "output": 1,
-         "value": 100000000,
-         "amount_msat": "100000000000msat",
-         "address": "sb1qjfnc470q679yjm99e86meakn863708njlx4k2n",
-         "status": "confirmed",
-         "blockheight": 13535
-      }
-   ],
-   "channels": [
-      {
-         "peer_id": "03e0bcd5e2d8fe663c54b8c129d277812bfa3fbd62dcd1424c21a28bdc6e51f632",
-         "connected": false,
-         "state": "ONCHAIN",
-         "short_channel_id": "13043x2x0",
-         "channel_sat": 100000,
-         "our_amount_msat": "100000000msat",
-         "channel_total_sat": 100000,
-         "amount_msat": "100000000msat",
-         "funding_txid": "5cb2277f1b7569330270772d05ec18faf5357459229802b200abf81f7f83a101",
-         "funding_output": 0
-      }
-   ]
+   "outputs": [],
+   "channels": []
 }
 ```
+
+1承認後
+```
+{
+   "outputs": [
+      {
+         "txid": "094958065057e48342dfb3e40a5cda15a7a44847f11f7186752741ff33e8d160",
+         "output": 0,
+         "value": 1000000000,
+         "amount_msat": "1000000000000msat",
+         "address": "sb1qll2ssyjnklvapqpmapyq0dwnhtp4p8g9a0r8rh",
+         "status": "confirmed",
+         "blockheight": 15294
+      }
+   ],
+   "channels": []
+}
+```
+
 
 チャンネルを貼るため、ネットワーク上のノードを見つける
 
