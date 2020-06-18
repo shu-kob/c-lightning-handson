@@ -40,7 +40,10 @@ bitcoindの状態を確認
 ```
 bcli getblockchaininfo
 ```
+ブロックチェーンエクスプローラとブロック高が一致すれば同期完了
 https://explorer.bc-2.jp/
+
+c-lightningを起動する
 
 ```
 docker exec $ID lightningd --log-level=debug >> ~/.lightning/debug.log &
