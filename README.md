@@ -28,11 +28,9 @@ ID=XXX
 ID=$(docker ps -q)
 ```
 
-
-
 ```
 alias bcli="docker exec $ID bitcoin-cli"
-alias lnli="docker exec $ID lightning-cli"
+alias lcli="docker exec $ID lightning-cli"
 ```
 
 bitcoindの状態を確認
@@ -42,25 +40,20 @@ bcli getblockchaininfo
 ```
 https://explorer.bc-2.jp/
 
-Lightningノードの状態を確認
-
 ```
-lici getinfo
-```
-
-別のターミナルを開き、Dockerの中に入る
-
-```
-docker exec -i -t $ID bash
-```
-
-```
-lightningd --log-level=debug >> ~/.lightning/debug.log
+docker exec $ID lightningd --log-level=debug >> ~/.lightning/debug.log &
 ```
 
 また別ターミナルを開くなどして、Dockerの外でc-lightningノードの状態を確認
 ```
-lnli getinfo
+lcli getinfo
+```
+
+Dockerの中に入る場合は、別のターミナルを開き下記のコマンド
+
+```
+ID=$(docker ps -q)
+docker exec -i -t $ID bash
 ```
 
 参考）c-lightning公式ドキュメントに沿ってインストール
