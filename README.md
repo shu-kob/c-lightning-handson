@@ -15,6 +15,8 @@ cd c-lightning-handson
 ./run.sh 
 ```
 
+Dockerの中を操作するためコンテナのIDを取得
+
 ```
 docker ps
 ```
