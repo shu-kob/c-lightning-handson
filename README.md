@@ -61,16 +61,7 @@ ID=$(docker ps -q)
 docker exec -i -t $ID bash
 ```
 
-参考）c-lightning公式ドキュメントに沿ってインストール
-
-Macの場合
-
-https://github.com/ElementsProject/lightning/blob/master/doc/INSTALL.md#to-build-on-macos
-
-Ubuntuの場合
-
-https://github.com/ElementsProject/lightning/blob/master/doc/INSTALL.md#to-build-on-ubuntu
-
+参考）
 ~/.lightning/config
 でLightning Nodeのエイリアスと色を設定できます。
 
@@ -80,50 +71,6 @@ alias=Aquamarine
 rgb=7FFFD4
 network=signet
 ```
-
-ネットワーク上のノードを見つけます。
-
-```
-$ lcli listnodes
-{
-   "nodes": [
-      {
-         "nodeid": "03e0bcd5e2d8fe663c54b8c129d277812bfa3fbd62dcd1424c21a28bdc6e51f632",
-         "alias": "Aquamarine",
-         "color": "7fffd4",
-         "last_timestamp": 1591400993,
-         "features": "8000000002aaa2",
-         "addresses": []
-      },
-      {
-         "nodeid": "03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a",
-         "alias": "ORANGEBEAM",
-         "color": "ff8c00",
-         "last_timestamp": 1591400192,
-         "features": "8000000002aaa2",
-         "addresses": [
-            {
-               "type": "ipv6",
-               "address": "2001:268:c0e4:ae82:29e7:b9bb:2c03:b22d",
-               "port": 9735
-            }
-         ]
-      }
-   ]
-}
-```
-ノードに接続します。（BTCは消費しません）
-IPアドレスが表示されているもののほうが接続しやすいです。
-```
-$ lcli connect 03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a@2001:268:c0e4:ae82:29e7:b9bb:2c03:b22d:9735
-{
-   "id": "03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a",
-   "features": "02aaa2"
-}
-```
-
-接続先のIDが返ってきたので接続成功です！
-
 
 c-lightningウォレットに入金するため、アドレスを発行します。
 
@@ -210,6 +157,49 @@ $ lcli fundchannel 03e0bcd5e2d8fe663c54b8c129d277812bfa3fbd62dcd1424c21a28bdc6e5
    "channel_id": "8df6d131ecf62f0a8378c800e71f9348a5cb7da31f5081996d31d778dbf3b08d"
 }
 ```
+
+チャンネルを貼るため、ネットワーク上のノードを見つけます。
+
+```
+$ lcli listnodes
+{
+   "nodes": [
+      {
+         "nodeid": "03e0bcd5e2d8fe663c54b8c129d277812bfa3fbd62dcd1424c21a28bdc6e51f632",
+         "alias": "Aquamarine",
+         "color": "7fffd4",
+         "last_timestamp": 1591400993,
+         "features": "8000000002aaa2",
+         "addresses": []
+      },
+      {
+         "nodeid": "03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a",
+         "alias": "ORANGEBEAM",
+         "color": "ff8c00",
+         "last_timestamp": 1591400192,
+         "features": "8000000002aaa2",
+         "addresses": [
+            {
+               "type": "ipv6",
+               "address": "2001:268:c0e4:ae82:29e7:b9bb:2c03:b22d",
+               "port": 9735
+            }
+         ]
+      }
+   ]
+}
+```
+ノードに接続します。（BTCは消費しません）
+IPアドレスが表示されているもののほうが接続しやすいです。
+```
+$ lcli connect 03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a@2001:268:c0e4:ae82:29e7:b9bb:2c03:b22d:9735
+{
+   "id": "03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a",
+   "features": "02aaa2"
+}
+```
+
+接続先のIDが返ってきたので接続成功です！
 
 ```
 $ lcli listpeers
