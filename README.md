@@ -55,6 +55,37 @@ docker exec $ID lightningd --log-level=debug >> ~/.lightning/debug.log &
 lcli getinfo
 ```
 
+```
+{
+   "id": "03e3f432238c431ac66f1080560d6426b450d3cd63279cf4ee002044bbe860834e",
+   "alias": "SLIMYWATCH",
+   "color": "03e3f4",
+   "num_peers": 0,
+   "num_pending_channels": 0,
+   "num_active_channels": 0,
+   "num_inactive_channels": 0,
+   "address": [],
+   "binding": [
+      {
+         "type": "ipv6",
+         "address": "::",
+         "port": 9735
+      },
+      {
+         "type": "ipv4",
+         "address": "0.0.0.0",
+         "port": 9735
+      }
+   ],
+   "version": "0.8.2.1",
+   "blockheight": 15393,
+   "network": "signet",
+   "msatoshi_fees_collected": 0,
+   "fees_collected_msat": "0msat",
+   "lightning-dir": "/root/.lightning/signet"
+}
+```
+
 Dockerの中に入る場合は、別のターミナルを開き下記のコマンド
 
 ```
