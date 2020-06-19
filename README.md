@@ -11,7 +11,7 @@ MacにDockerをインストール
 https://hub.docker.com/editions/community/docker-ce-desktop-mac
 
 
-UbuntuにDockerとDocker-composeをインストール
+UbuntuにDockerとDocker-composeをインストール（DockerのみでOK、docke-composeは不要）
 
 https://qiita.com/youtangai/items/ff67ceff5497a0e0b1af
 
