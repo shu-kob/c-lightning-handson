@@ -54,8 +54,10 @@ RUN V=1 make -j2
 RUN make install
 
 ENV BITCOIN_DATA=/root/.bitcoin
+ENV LIGHTNING_DATA=/root/.lightning
 
 RUN mkdir -p ${BITCOIN_DATA}
+RUN mkdir -p ${LIGHTNING_DATA}
 
 COPY docker-entrypoint.sh /entrypoint.sh
 
