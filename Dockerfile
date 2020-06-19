@@ -45,7 +45,7 @@ RUN ./autogen.sh
 
 ENV BDB_PREFIX='/workspace/db4'
 
-RUN  ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --disable-tests --disable-bench --without-gui
+RUN ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --disable-tests --disable-bench --without-gui
 
 RUN V=1 make clean
 
@@ -57,8 +57,10 @@ ENV BITCOIN_DATA=/root/.bitcoin
 
 RUN mkdir -p ${BITCOIN_DATA}
 
-EXPOSE 8332 8333 18332 18333 18443 18444 38332 38333
+COPY docker-entrypoint.sh /entrypoint.sh
 
-COPY ./bitcoin.conf /root/.bitcoin/bitcoin.conf
+EXPOSE 8332 8333 18332 18333 18443 18444 38332 38333 9735
+
+ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["bitcoind"]
