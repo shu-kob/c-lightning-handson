@@ -50,7 +50,7 @@ c-lightningを起動する
 docker exec $ID lightningd --log-level=debug >> ~/.lightning/debug.log &
 ```
 
-また別ターミナルを開くなどして、Dockerの外でc-lightningノードの状態を確認
+別ターミナルを開くなどして、Dockerの外でc-lightningノードの状態を確認
 ```
 lcli getinfo
 ```
@@ -242,3 +242,56 @@ lcli pay lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq
    "bolt11": "lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq8w3jhxaqxqyjw5qcqp2sp5v76jend8mznkx87qeru4wkzu9q3tm6ae0yx3xsh7mkg43vaf2z4s9qy9qsq7kn8hdw6z9wwn45rp4eec9gpfdj4hcmsvjtq2lsdxwj0ehnegzejrudq2h7qr7lq28uq66gxhu40mvwceer7qn6ga7ctmuynqzxgfmcp8fqpam"
 }
 ```
+
+```
+lcli help
+```
+でコマンド一覧を見れる
+
+もう一度、listfundsを見ると、channelsの情報が見れる。
+```
+lcli listfunds
+{
+   "outputs": [
+      {
+         "txid": "12e8b124ba1367e72793a9e1815a8b8a9581a8e83e3280caf9fc3c7e9b98f946",
+         "output": 1,
+         "value": 1999899846,
+         "amount_msat": "1999899846000msat",
+         "address": "sb1qrkehc98qen3t4wscy3yqvqm2qs67xnprh29q26",
+         "status": "confirmed",
+         "blockheight": 15423
+      }
+   ],
+   "channels": [
+      {
+         "peer_id": "02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972",
+         "connected": true,
+         "state": "CHANNELD_NORMAL",
+         "short_channel_id": "15423x1x0",
+         "channel_sat": 99899,
+         "our_amount_msat": "99899000msat",
+         "channel_total_sat": 100000,
+         "amount_msat": "100000000msat",
+         "funding_txid": "12e8b124ba1367e72793a9e1815a8b8a9581a8e83e3280caf9fc3c7e9b98f946",
+         "funding_output": 0
+      }
+   ]
+}
+```
+
+チャンネルをクローズする際は以下
+
+```
+lcli close 02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972
+{
+   "tx": "020000000146f9989b7e3cfcf9ca80323ee8a881958a8b5a81e1a99327e76713ba24b1e8120000000000ffffffff018485010000000000160014b9acff5dfb4a684414409d9dc2ff0a64ac0cf43800000000",
+   "txid": "641a41b2214a7b876f06dc30242a289084a1d61cc8d4789b432172ad7af3015a",
+   "type": "mutual"
+}
+```
+
+```
+lcli withdraw <address> all
+```
+はc-ightningウォレットから資金を外に送るときに使う
