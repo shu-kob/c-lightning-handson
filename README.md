@@ -159,38 +159,22 @@ lcli listfunds
 ```
 lcli listnodes
 {
-   "nodes": [
-      {
-         "nodeid": "03e0bcd5e2d8fe663c54b8c129d277812bfa3fbd62dcd1424c21a28bdc6e51f632",
-         "alias": "Aquamarine",
-         "color": "7fffd4",
-         "last_timestamp": 1591400993,
-         "features": "8000000002aaa2",
-         "addresses": []
-      },
-      {
-         "nodeid": "03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a",
-         "alias": "ORANGEBEAM",
-         "color": "ff8c00",
-         "last_timestamp": 1591400192,
-         "features": "8000000002aaa2",
-         "addresses": [
-            {
-               "type": "ipv6",
-               "address": "2001:268:c0e4:ae82:29e7:b9bb:2c03:b22d",
-               "port": 9735
-            }
-         ]
-      }
-   ]
+   "nodes": []
 }
 ```
+
+ない場合は。
+```
+02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972@153.126.144.46:9735
+```
+に接続する
+
 ノードに接続（BTCは消費しない）
 IPアドレスが表示されているもののほうが接続しやすい
 ```
-lcli connect 03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a@2001:268:c0e4:ae82:29e7:b9bb:2c03:b22d:9735
+lcli connect 02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972@153.126.144.46:9735
 {
-   "id": "03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a",
+   "id": "02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972",
    "features": "02aaa2"
 }
 ```
@@ -199,11 +183,11 @@ lcli connect 03d850b86b3efd56317fa4a6291480b04aca2ee1c1649ee9cdc02e205e0ed7f55a@
 
 
 ```
-lcli fundchannel 03e0bcd5e2d8fe663c54b8c129d277812bfa3fbd62dcd1424c21a28bdc6e51f632 100000
+lcli fundchannel 02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972 100000
 {
-   "tx": "0200000000010101a1837f1ff8ab00b2029822597435f5fa18ec052d7770023369751b7f27b25c0100000000feffffff02a086010000000000220020155eff4d34ad33683b56974b287675d828af0a92b0f05c26ba9f29b778848736b747f10500000000160014d943a1df3ec162d77b9e10ce4780bb687b6cf0bb0247304402204f85f7162a9d86023f05513dc2f7e15b0bf0f7d00ac3cfa8922bbe5df9634e150220184b39b9aeba1ec13d6f0411c0f5f7b6f2c6d20b3c33fcc4b4eb290baf4d176a012102f45c34a953d45b600422c565a5f2b611293035f0c31bc2b1c8afa5578ba9539700000000",
-   "txid": "8db0f3db78d7316d9981501fa37dcba548931fe700c878830a2ff6ec31d1f68d",
-   "channel_id": "8df6d131ecf62f0a8378c800e71f9348a5cb7da31f5081996d31d778dbf3b08d"
+   "tx": "02000000000101c9daf4bf03669e097b4a81726066a7ccb9423e5cc6e905ad97bb9d56883980280000000000feffffff02a08601000000000022002034c0c319476d458cd80992be0d497fe45ca9d05b6b96851b03439d4da3d67426c60c3477000000001600141db37c14e0cce2baba18244806036a0435e34c23024730440220566ef4ded9966fdb68a79d2620c87c64b5429e6ff77b50c84511556e0a40d518022017b3ae316ab7304f45c80fc802c17984a5c80956934a8fc49f6e6bd70cedf1b50121025721147c93567d486de6e9b3b6418f208c12f987e3f34fe19318734e4437b06100000000",
+   "txid": "12e8b124ba1367e72793a9e1815a8b8a9581a8e83e3280caf9fc3c7e9b98f946",
+   "channel_id": "46f9989b7e3cfcf9ca80323ee8a881958a8b5a81e1a99327e76713ba24b1e812"
 }
 ```
 
@@ -224,21 +208,27 @@ Signetの場合、1承認で
 ```
 "state": "CHANNELD_NORMAL",
 ```
-となります。Testnetの場合3承認です。
+となる。Testnetの場合3承認。
 
-Invoiceを発行して、送ってもらいましょう。
+Invoiceを発行して、送ってもらう。
 
 ```
-lcli invoice 100000 "test" "test"
+lightning-cli invoice 100000 "test" "test"
 {
-   "payment_hash": "5e8f876b9064f8ba870436e6218510a5ca591e6a69c86ffa5b82d6bbc08d085b",
-   "expires_at": 1592011601,
-   "bolt11": "lnsb1u1p0d4ux3pp5t68cw6usvnut4pcyxmnzrpgs5h99j8n2d8yxl7jmsttthsydppdsdq8w3jhxaqxqyjw5qcqp2sp5g5wfjjl2ra7kfwmu9dnejl5pp5qr6w94kg3mazm8kjk2acnrydks9qy9qsqdehsvf2d5xwqtkxt622h694nxchp6xd0wqg3563r8x6xpsactfprkd0ac4p9e9xp6mzg4td8u60natuj6suryelfm6rf8zepmx494xqpp7x7xq",
-   "warning_deadends": "No channel with a peer that is not a dead end"
+   "payment_hash": "9ac3a93fc9eb6897044889c4bfea2c23eb593d08b2ad917219f9a315a314fe8a",
+   "expires_at": 1593158566,
+   "bolt11": "lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq8w3jhxaqxqyjw5qcqp2sp5v76jend8mznkx87qeru4wkzu9q3tm6ae0yx3xsh7mkg43vaf2z4s9qy9qsq7kn8hdw6z9wwn45rp4eec9gpfdj4hcmsvjtq2lsdxwj0ehnegzejrudq2h7qr7lq28uq66gxhu40mvwceer7qn6ga7ctmuynqzxgfmcp8fqpam",
+   "warning_capacity": "No channels"
 }
 ```
 
-送る方はpayコマンドを叩きましょう。
+```
+"warning_capacity": "No channels"
+```
+
+となっている場合は、fundingTXの承認待ち。しばらく待つ。
+
+送る方はpayコマンドを叩く。
 
 ```
 lcli pay lnsb1u1p0d4ux3pp5t68cw6usvnut4pcyxmnzrpgs5h99j8n2d8yxl7jmsttthsydppdsdq8w3jhxaqxqyjw5qcqp2sp5g5wfjjl2ra7kfwmu9dnejl5pp5qr6w94kg3mazm8kjk2acnrydks9qy9qsqdehsvf2d5xwqtkxt622h694nxchp6xd0wqg3563r8x6xpsactfprkd0ac4p9e9xp6mzg4td8u60natuj6suryelfm6rf8zepmx494xqpp7x7xq
