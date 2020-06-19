@@ -228,7 +228,7 @@ Signetの場合、1承認で
 Invoiceを発行して、送ってもらう。
 
 ```
-lightning-cli invoice 100000 "test" "test"
+lcli invoice 100000 "test" "test"
 {
    "payment_hash": "9ac3a93fc9eb6897044889c4bfea2c23eb593d08b2ad917219f9a315a314fe8a",
    "expires_at": 1593158566,
