@@ -196,17 +196,13 @@ lcli listpeers
 ```
 
 ```
-"state": "CHANNELD_AWAITING_LOCKIN",
-```
-
-```
 "CHANNELD_AWAITING_LOCKIN:Funding needs 1 more confirmations for lockin."
 ```
 
 これはLightningにデポジットするのをロック中という意味で、
 Signetの場合、1承認で
 ```
-"state": "CHANNELD_NORMAL",
+"CHANNELD_NORMAL:Funding transaction locked."
 ```
 となる。Testnetの場合3承認。
 
@@ -231,18 +227,18 @@ lightning-cli invoice 100000 "test" "test"
 送る方はpayコマンドを叩く。
 
 ```
-lcli pay lnsb1u1p0d4ux3pp5t68cw6usvnut4pcyxmnzrpgs5h99j8n2d8yxl7jmsttthsydppdsdq8w3jhxaqxqyjw5qcqp2sp5g5wfjjl2ra7kfwmu9dnejl5pp5qr6w94kg3mazm8kjk2acnrydks9qy9qsqdehsvf2d5xwqtkxt622h694nxchp6xd0wqg3563r8x6xpsactfprkd0ac4p9e9xp6mzg4td8u60natuj6suryelfm6rf8zepmx494xqpp7x7xq
+lcli pay lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq8w3jhxaqxqyjw5qcqp2sp5v76jend8mznkx87qeru4wkzu9q3tm6ae0yx3xsh7mkg43vaf2z4s9qy9qsq7kn8hdw6z9wwn45rp4eec9gpfdj4hcmsvjtq2lsdxwj0ehnegzejrudq2h7qr7lq28uq66gxhu40mvwceer7qn6ga7ctmuynqzxgfmcp8fqpam
 {
-   "id": 3,
-   "payment_hash": "5e8f876b9064f8ba870436e6218510a5ca591e6a69c86ffa5b82d6bbc08d085b",
-   "destination": "03e0bcd5e2d8fe663c54b8c129d277812bfa3fbd62dcd1424c21a28bdc6e51f632",
+   "id": 1,
+   "payment_hash": "9ac3a93fc9eb6897044889c4bfea2c23eb593d08b2ad917219f9a315a314fe8a",
+   "destination": "02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972",
    "msatoshi": 100004,
    "amount_msat": "100004msat",
    "msatoshi_sent": 100004,
    "amount_sent_msat": "100004msat",
-   "created_at": 1591406825,
+   "created_at": 1592554031,
    "status": "complete",
-   "payment_preimage": "2944013f9ac06051181131781ae5a561b5e10564877442c0e3231fb5a39c889a",
-   "bolt11": "lnsb1u1p0d4ux3pp5t68cw6usvnut4pcyxmnzrpgs5h99j8n2d8yxl7jmsttthsydppdsdq8w3jhxaqxqyjw5qcqp2sp5g5wfjjl2ra7kfwmu9dnejl5pp5qr6w94kg3mazm8kjk2acnrydks9qy9qsqdehsvf2d5xwqtkxt622h694nxchp6xd0wqg3563r8x6xpsactfprkd0ac4p9e9xp6mzg4td8u60natuj6suryelfm6rf8zepmx494xqpp7x7xq"
+   "payment_preimage": "6f37be7990520b4af20629541e527eaf8a6a4a8ddb27cc272fdc07876ff3b1b7",
+   "bolt11": "lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq8w3jhxaqxqyjw5qcqp2sp5v76jend8mznkx87qeru4wkzu9q3tm6ae0yx3xsh7mkg43vaf2z4s9qy9qsq7kn8hdw6z9wwn45rp4eec9gpfdj4hcmsvjtq2lsdxwj0ehnegzejrudq2h7qr7lq28uq66gxhu40mvwceer7qn6ga7ctmuynqzxgfmcp8fqpam"
 }
 ```
