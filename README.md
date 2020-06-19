@@ -66,7 +66,7 @@ https://explorer.bc-2.jp/
 c-lightningを起動する
 
 ```
-docker exec $ID lightningd --log-level=debug >> ~/.lightning/debug.log &
+docker exec $ID lightningd &
 ```
 
 別ターミナルを開くなどして、Dockerの外でc-lightningノードの状態を確認
