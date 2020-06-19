@@ -1,7 +1,7 @@
 # c-lightning-handson
 2020/6/19ビットコインとか勉強会c-lightningハンズオン
 
-## Signet対応のbitcoindとc-lightningをDockerでインストール
+## Signet対応のbitcoindとc-lightningをインストールしたDockerをビルド
 
 ```
 git clone https://github.com/shu-kob/c-lightning-handson
