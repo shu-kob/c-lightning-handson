@@ -214,12 +214,17 @@ lcli listpeers
 ```
 "state": "CHANNELD_AWAITING_LOCKIN",
 ```
+
+```
+"CHANNELD_AWAITING_LOCKIN:Funding needs 1 more confirmations for lockin."
+```
+
 これはLightningにデポジットするのをロック中という意味で、
 Signetの場合、1承認で
 ```
 "state": "CHANNELD_NORMAL",
 ```
-となります。
+となります。Testnetの場合3承認です。
 
 Invoiceを発行して、送ってもらいましょう。
 
