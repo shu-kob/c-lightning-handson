@@ -95,7 +95,7 @@ docker exec -i -t $ID bash
 
 参考）
 ~/.lightning/config
-でLightning Nodeのエイリアスと色を設定できる
+でLightning Nodeのエイリアスと色を設定できる（Dockerの中に入るのが必要）
 
 例）
 ```
