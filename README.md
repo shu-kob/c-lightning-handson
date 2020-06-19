@@ -294,4 +294,4 @@ lcli close 02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972
 ```
 lcli withdraw <address> all
 ```
-はc-ightningウォレットから資金を外に送るときに使う
+はc-lightningウォレットから資金を外に送るときに使う
