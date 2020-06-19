@@ -5,13 +5,16 @@
 
 https://www.docker.com/
 
+
 MacにDockerをインストール
 
 https://hub.docker.com/editions/community/docker-ce-desktop-mac
 
+
 UbuntuにDockerとDocker-composeをインストール
 
 https://qiita.com/youtangai/items/ff67ceff5497a0e0b1af
+
 
 Windows10の方はUbuntuを入れた上で、上記「UbuntuにDockerとDocker-composeをインストール」
 
