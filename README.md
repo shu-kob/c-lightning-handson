@@ -1,6 +1,19 @@
 # c-lightning-handson
 2020/6/19ビットコインとか勉強会c-lightningハンズオン
 
+## Dockerをインストール
+
+https://www.docker.com/
+
+MacにDockerをインストール
+https://hub.docker.com/editions/community/docker-ce-desktop-mac
+
+UbuntuにDockerとDocker-composeをインストール
+https://qiita.com/youtangai/items/ff67ceff5497a0e0b1af
+
+Windows10の方はUbuntuを入れた上で、上記「UbuntuにDockerとDocker-composeをインストール」
+https://www.microsoft.com/ja-jp/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab
+
 ## Signet対応のbitcoindとc-lightningをインストールしたDockerをビルド
 
 ```
