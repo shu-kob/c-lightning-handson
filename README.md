@@ -261,13 +261,19 @@ lcli pay lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq
    "bolt11": "lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq8w3jhxaqxqyjw5qcqp2sp5v76jend8mznkx87qeru4wkzu9q3tm6ae0yx3xsh7mkg43vaf2z4s9qy9qsq7kn8hdw6z9wwn45rp4eec9gpfdj4hcmsvjtq2lsdxwj0ehnegzejrudq2h7qr7lq28uq66gxhu40mvwceer7qn6ga7ctmuynqzxgfmcp8fqpam"
 }
 ```
+受け取った方は
+```
+lcli listfunds
+```
+等で資金を受け取っていることを確認できる
+
 
 ```
 lcli help
 ```
 でコマンド一覧を見れる
 
-もう一度、listfundsを見ると、channelsの情報が見れる。
+listfundsを見ると、channelsの情報が見れる。
 ```
 lcli listfunds
 {
