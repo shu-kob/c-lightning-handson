@@ -5,7 +5,8 @@ set -e
 
 if [ ! -e "$BITCOIN_DATA/bitcoin.conf" ]; then
     echo "$0: creating $BITCOIN_DATA/bitcoin.conf with signet=1"
-    echo "signet=1\ntxindex=1\n[signet]\n$BITCOIN_EXTRA_ARGS" > $BITCOIN_DATA/bitcoin.conf
+    echo "signet=1\ntxindex=1\n[signet]\nrpcuser=hoge\nrpcpassword=hoge\nrpcport=38332\nport=38333" > $BITCOIN_DATA/bitcoin.conf
+    echo "network=signet" > $LIGHTNING_DATA/config
 fi
 
 if [ $(echo "$1" | cut -c1) = "-" ]; then
