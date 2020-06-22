@@ -34,7 +34,7 @@ cd c-lightning-handson
 ./run.sh 
 ```
 
-別ターミナルを開き、Dockerの中を操作するためコンテナのIDを取得
+### 別ターミナルを開き、Dockerの中を操作するためコンテナのIDを取得
 
 ```
 docker ps
@@ -44,7 +44,7 @@ docker ps
 ID=XXX
 ```
 
-起動中のコンテナが一つだけの場合は以下で取得できる
+### 起動中のコンテナが一つだけの場合は以下で取得
 ```
 ID=$(docker ps -q)
 ```
@@ -54,7 +54,7 @@ alias bcli="docker exec $ID bitcoin-cli"
 alias lcli="docker exec $ID lightning-cli"
 ```
 
-bitcoindの状態を確認
+### bitcoindの状態を確認
 
 ```
 bcli getblockchaininfo
@@ -63,13 +63,13 @@ bcli getblockchaininfo
 
 https://explorer.bc-2.jp/
 
-c-lightningを起動する
+### c-lightningを起動する
 
 ```
 docker exec $ID lightningd &
 ```
 
-別ターミナルを開くなどして、Dockerの外でc-lightningノードの状態を確認
+### 別ターミナルを開くなどして、Dockerの外でc-lightningノードの状態を確認
 ```
 lcli getinfo
 ```
@@ -105,14 +105,14 @@ lcli getinfo
 }
 ```
 
-Dockerの中に入る場合は、別のターミナルを開き下記のコマンド
+### Dockerの中に入る場合は、別のターミナルを開き下記のコマンド
 
 ```
 ID=$(docker ps -q)
 docker exec -i -t $ID bash
 ```
 
-参考）
+### 参考）エイリアスとカラー
 ~/.lightning/config
 でLightning Nodeのエイリアスと色を設定できる（Dockerの中に入るのが必要）
 
@@ -123,7 +123,7 @@ rgb=7FFFD4
 network=signet
 ```
 
-c-lightningウォレットに入金するため、アドレスを発行
+### c-lightningウォレットに入金するため、アドレスを発行
 
 ```
 lcli newaddr
@@ -134,15 +134,15 @@ lcli newaddr
 
 ```
 
-Signet Faucetに上記で得たアドレスをコピペして、Signet用BTCを入手
+### Signet Faucetに上記で得たアドレスをコピペして、Signet用BTCを入手
 
 https://signet.bc-2.jp/
 
-TXをExplorerで確認
+### TXをExplorerで確認
 
 https://explorer.bc-2.jp/
 
-listfundsコマンドのoutputsがconfirmedされたらfundchannelでチャンネルを開ける
+### listfundsコマンドのoutputsがconfirmedされたらfundchannelでチャンネルを開ける
 
 承認前
 
@@ -173,7 +173,7 @@ lcli listfunds
 ```
 
 
-チャンネルを貼るため、ネットワーク上のノードを見つける
+### チャンネルを貼るため、ネットワーク上のノードを見つける
 
 ```
 lcli listnodes
@@ -188,7 +188,7 @@ lcli listnodes
 ```
 に接続する
 
-ノードに接続（BTCは消費しない）
+### ノードに接続（BTCは消費しない）
 IPアドレスが表示されているもののほうが接続しやすい
 ```
 lcli connect 02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972@153.126.144.46:9735
@@ -198,7 +198,7 @@ lcli connect 02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972@
 }
 ```
 
-接続先のIDが返ってきたら接続成功
+### 接続先のIDが返ってきたら接続成功
 
 
 ```
@@ -243,7 +243,7 @@ lcli invoice 100000 "test" "test"
 
 となっている場合は、fundingTXの承認待ち。しばらく待つ。
 
-送る方はpayコマンドを叩く。
+送る方はpayコマンドを叩く
 
 ```
 lcli pay lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq8w3jhxaqxqyjw5qcqp2sp5v76jend8mznkx87qeru4wkzu9q3tm6ae0yx3xsh7mkg43vaf2z4s9qy9qsq7kn8hdw6z9wwn45rp4eec9gpfdj4hcmsvjtq2lsdxwj0ehnegzejrudq2h7qr7lq28uq66gxhu40mvwceer7qn6ga7ctmuynqzxgfmcp8fqpam
@@ -304,6 +304,7 @@ listinvoices
 ```
 は支払いがされたもの
 
+## ヘルプ
 
 ```
 lcli help
@@ -342,7 +343,7 @@ lcli listfunds
 }
 ```
 
-チャンネルをクローズする際は以下
+### チャンネルをクローズする際は以下
 
 ```
 lcli close 02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972
