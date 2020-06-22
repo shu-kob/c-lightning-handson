@@ -263,9 +263,46 @@ lcli pay lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq
 ```
 受け取った方は
 ```
-lcli listfunds
+listinvoices
+{
+   "invoices": [
+      {
+         "label": "aaa",
+         "bolt11": "lnsb10u1p0tgy5xpp5knzslnnz57g9ewy05kugnef8d6ejjhm908wms6jzhsa5u9z2eegsdq9venxvxqyjw5qcqp2sp5njdxjp8jkx9djagjxq5ks5v9mms4xxtdjjed00renva02hpyy6ds9qy9qsq6ajtp928gqwm5xzy5f6kaeh8vpg2z8rksz4gq2hxlp72mc9ugv2ru4atrgtsywplsyn0mmw9jrrnddlfr6dkzp8ezaxqe2znqy8mpgcpny3nf2",
+         "payment_hash": "b4c50fce62a7905cb88fa5b889e5276eb3295f6579ddb86a42bc3b4e144ace51",
+         "msatoshi": 1000000,
+         "amount_msat": "1000000msat",
+         "status": "expired",
+         "description": "fff",
+         "expires_at": 1589464326
+      },
+      {
+         "label": "testr",
+         "bolt11": "lnsb100n1p0w7aszpp5yh9at6xlf5g3ds9are3s9pqepcpqnqngl2yspr8qwvrmqas40qwqdq0w3jhxar5v4ehgusxqyjw5qcqp2sp5937u8ey8hysgnkrrajp4e3a8n99fcjtva3mmv8tcrqe29uh65ljq9qy9qsqjargqx7ms8pudfkc0ye5qx6mj6ass9mn4a4h06l2aqm24sw7an6yykfhle43f79qtp8ckea4v8kafnxe22gjpckz2a94lh3eg978s0gpradgsq",
+         "payment_hash": "25cbd5e8df4d1116c0bd1e630284190e02098268fa89008ce07307b07615781c",
+         "msatoshi": 10000,
+         "amount_msat": "10000msat",
+         "status": "paid",
+         "pay_index": 1,
+         "msatoshi_received": 10000,
+         "amount_received_msat": "10000msat",
+         "paid_at": 1592751676,
+         "payment_preimage": "decb3a48e9f95da2e1e0ea5dcc1ac3dd52ac9f76b139fd300d402c7274bc4ac7",
+         "description": "testtestr",
+         "expires_at": 1593356418
+      },
 ```
-等で資金を受け取っていることを確認できる
+で資金を受け取っていることを確認
+
+```
+"status": "expired",
+```
+は支払いがなされないままinvoiceの有効期限を迎えたもの
+
+```
+"status": "paid",
+```
+は支払いがされたもの
 
 
 ```
