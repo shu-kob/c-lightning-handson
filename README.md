@@ -48,7 +48,7 @@ ID=XXX
 ```
 ID=$(docker ps -q)
 ```
-
+### Dockerコンテナ内でコマンドを打ちやすくするためにエイリアスを設定
 ```
 alias bcli="docker exec $ID bitcoin-cli"
 alias lcli="docker exec $ID lightning-cli"
