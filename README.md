@@ -26,7 +26,7 @@ cd c-lightning-handson
 ./build.sh
 ```
 
-## ビルドが終わったら起動
+## ビルドが終わったらDocker起動（bitcoindも起動する)
 
 ```
 ./run.sh 
