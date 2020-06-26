@@ -37,6 +37,7 @@ cd c-lightning-handson
 ```
 docker ps
 ```
+CONTAINER IDを取得
 
 ```
 ID=XXX
