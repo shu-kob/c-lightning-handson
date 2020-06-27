@@ -18,7 +18,9 @@ https://qiita.com/youtangai/items/ff67ceff5497a0e0b1af
 
 https://www.microsoft.com/ja-jp/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab
 
-## Signet対応のbitcoindとc-lightningをインストールしたDockerをビルド
+## Dockerファイルをダウンロードしてセットアップ
+
+### Signet対応のbitcoindとc-lightningをインストールしたDockerをビルド
 
 ```
 git clone https://github.com/shu-kob/c-lightning-handson
@@ -26,7 +28,7 @@ cd c-lightning-handson
 ./build.sh
 ```
 
-## ビルドが終わったらDocker起動（bitcoindも起動する)
+### ビルドが終わったらDocker起動（bitcoindも起動する)
 
 ```
 ./run.sh 
