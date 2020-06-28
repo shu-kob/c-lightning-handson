@@ -18,7 +18,7 @@ https://qiita.com/youtangai/items/ff67ceff5497a0e0b1af
 
 https://www.microsoft.com/ja-jp/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab
 
-## Dockerファイルをダウンロードしてセットアップ
+## Dockerfileなどをダウンロードしてセットアップ
 
 ### Signet対応のbitcoindとc-lightningをインストールしたDockerをビルド
 
