@@ -313,6 +313,8 @@ lcli help
 ```
 でコマンド一覧を見れる
 
+## チャンネルを張るためにデポジットした情報を見る
+
 listfundsを見ると、channelsの情報が見れる。
 ```
 lcli listfunds
@@ -344,6 +346,7 @@ lcli listfunds
    ]
 }
 ```
+## チャンネルのクローズ
 
 ### チャンネルをクローズする際は以下
 
@@ -355,6 +358,8 @@ lcli close 02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972
    "type": "mutual"
 }
 ```
+
+## c-lightningウォレットからの資金引き出し
 
 ```
 lcli withdraw <address> all
