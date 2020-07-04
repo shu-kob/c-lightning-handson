@@ -45,6 +45,8 @@ CONTAINER IDを取得
 ID=XXX
 ```
 
+XXXはCONTAINER ID
+
 ### 起動中のコンテナが一つだけの場合は以下で取得
 ```
 ID=$(docker ps -q)
