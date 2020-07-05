@@ -141,6 +141,8 @@ lcli newaddr
 
 https://signet.bc-2.jp/
 
+同一IP、同一アドレスでは1回入手するとしばらくもらえない
+
 ### TXをExplorerで確認
 
 https://explorer.bc-2.jp/
