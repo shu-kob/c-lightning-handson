@@ -1,6 +1,8 @@
 # c-lightning-handson
 2020/6/19ビットコインとか勉強会c-lightningハンズオン
 
+https://cryptocurrency.connpass.com/event/177836/
+
 ## Dockerをインストール
 
 https://www.docker.com/
