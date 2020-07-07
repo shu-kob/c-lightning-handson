@@ -3,6 +3,7 @@
 
 https://cryptocurrency.connpass.com/event/177836/
 
+
 ## Dockerをインストール
 
 https://www.docker.com/
@@ -30,7 +31,7 @@ cd c-lightning-handson
 ./build.sh
 ```
 
-### ビルドが終わったらDocker起動（bitcoindも起動する)
+### ビルドが終わったらDocker起動（bitcoindが起動する)
 
 ```
 ./run.sh 
