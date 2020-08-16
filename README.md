@@ -308,6 +308,24 @@ lcli listinvoices
 ```
 は支払いがされたもの
 
+以下は、ルートが見つからないエラー
+```
+lightning-cli pay lnsb50n1p0n3nt4pp5jxmw5gnae3up8fllnkfgthd2kksdjcg8ldmud6l8ls63lnrdhxasdq8w3jhxaqxqyjw5qcqp2sp52q3lqjlkyfduq7w94tn9fl2l58yxddqqag6dj95jdufgw73ehm7q9qy9qsqrzv3k33hnjv0ae55p2zt4jvghr7kejmud03ucf7p0d7r96sv2fljzzput9pde3pncjlhuqhgfrphx28fdectgpcc9npzjummly450jspx730th
+{
+   "code": 210,
+   "message": "Ran out of routes to try after 1 attempt: see `paystatus`",
+   "attempts": [
+      {
+         "status": "failed",
+         "failreason": "Error computing a route to 02605b52c049f80135dd0d4fad1fcb97c9b789bff2794696152a74dc9cacf27587: \"Could not find a route\" (205)",
+         "partid": 1,
+         "amount": "5000msat"
+      }
+   ]
+}
+
+```
+
 ## ヘルプ
 
 ```
