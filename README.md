@@ -308,7 +308,7 @@ lcli listinvoices
 ```
 は支払いがされたもの
 
-以下は、ルートが見つからないエラー
+支払い時、以下はルートが見つからないエラー
 ```
 lightning-cli pay lnsb50n1p0n3nt4pp5jxmw5gnae3up8fllnkfgthd2kksdjcg8ldmud6l8ls63lnrdhxasdq8w3jhxaqxqyjw5qcqp2sp52q3lqjlkyfduq7w94tn9fl2l58yxddqqag6dj95jdufgw73ehm7q9qy9qsqrzv3k33hnjv0ae55p2zt4jvghr7kejmud03ucf7p0d7r96sv2fljzzput9pde3pncjlhuqhgfrphx28fdectgpcc9npzjummly450jspx730th
 {
@@ -323,7 +323,6 @@ lightning-cli pay lnsb50n1p0n3nt4pp5jxmw5gnae3up8fllnkfgthd2kksdjcg8ldmud6l8ls63
       }
    ]
 }
-
 ```
 
 ## ヘルプ
