@@ -240,13 +240,14 @@ Signetの場合、1承認で
 Invoiceを発行して、送ってもらう。
 
 ```
-lcli invoice 100000 "test" "test"
+lcli invoice 10000 "test" "test"
 {
-   "payment_hash": "9ac3a93fc9eb6897044889c4bfea2c23eb593d08b2ad917219f9a315a314fe8a",
-   "expires_at": 1593158566,
-   "bolt11": "lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq8w3jhxaqxqyjw5qcqp2sp5v76jend8mznkx87qeru4wkzu9q3tm6ae0yx3xsh7mkg43vaf2z4s9qy9qsq7kn8hdw6z9wwn45rp4eec9gpfdj4hcmsvjtq2lsdxwj0ehnegzejrudq2h7qr7lq28uq66gxhu40mvwceer7qn6ga7ctmuynqzxgfmcp8fqpam",
-   "warning_capacity": "No channels"
+   "payment_hash": "35905e06212e3eec1967d9db568d023ed50d8154c60326ad6021a036c3de9fcb",
+   "expires_at": 1598162705,
+   "bolt11": "lnsb100n1p0n3ny3pp5xkg9up3p9clwcxt8m8d4drgz8m2smq25ccpjdttqyxsrds77nl9sdq8w3jhxaqxqyjw5qcqp2sp50nj0hugzz054z6rpnfr3094jwa6ahg20r60s3c0eyucvewca0c5s9qy9qsqlp4xu032sr6dmqa35306cal45wd35zmkeyvxd5quqyau0shqf6g39mu8mfq9f2hmw4tz02sys7z7jevlfz439gpqmafqsxadv342qhqp9u6lcc",
+   "warning_deadends": "No channel with a peer that is not a dead end"
 }
+
 ```
 
 ```
