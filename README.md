@@ -259,51 +259,42 @@ lcli invoice 10000 "test" "test"
 送る方はpayコマンドを叩く
 
 ```
-lcli pay lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq8w3jhxaqxqyjw5qcqp2sp5v76jend8mznkx87qeru4wkzu9q3tm6ae0yx3xsh7mkg43vaf2z4s9qy9qsq7kn8hdw6z9wwn45rp4eec9gpfdj4hcmsvjtq2lsdxwj0ehnegzejrudq2h7qr7lq28uq66gxhu40mvwceer7qn6ga7ctmuynqzxgfmcp8fqpam
+lcli pay lnsb100n1p0n3ny3pp5xkg9up3p9clwcxt8m8d4drgz8m2smq25ccpjdttqyxsrds77nl9sdq8w3jhxaqxqyjw5qcqp2sp50nj0hugzz054z6rpnfr3094jwa6ahg20r60s3c0eyucvewca0c5s9qy9qsqlp4xu032sr6dmqa35306cal45wd35zmkeyvxd5quqyau0shqf6g39mu8mfq9f2hmw4tz02sys7z7jevlfz439gpqmafqsxadv342qhqp9u6lcc
 {
-   "id": 1,
-   "payment_hash": "9ac3a93fc9eb6897044889c4bfea2c23eb593d08b2ad917219f9a315a314fe8a",
-   "destination": "02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972",
-   "msatoshi": 100004,
-   "amount_msat": "100004msat",
-   "msatoshi_sent": 100004,
-   "amount_sent_msat": "100004msat",
-   "created_at": 1592554031,
-   "status": "complete",
-   "payment_preimage": "6f37be7990520b4af20629541e527eaf8a6a4a8ddb27cc272fdc07876ff3b1b7",
-   "bolt11": "lnsb1u1p0wcufxpp5ntp6j07fad5fwpzg38ztl63vy044j0ggk2kezuselx33tgc5l69qdq8w3jhxaqxqyjw5qcqp2sp5v76jend8mznkx87qeru4wkzu9q3tm6ae0yx3xsh7mkg43vaf2z4s9qy9qsq7kn8hdw6z9wwn45rp4eec9gpfdj4hcmsvjtq2lsdxwj0ehnegzejrudq2h7qr7lq28uq66gxhu40mvwceer7qn6ga7ctmuynqzxgfmcp8fqpam"
+   "destination": "031c94cba9161457236a6df85d6c890e82f1dcbf5729e80f06c318f94139f17015",
+   "payment_hash": "35905e06212e3eec1967d9db568d023ed50d8154c60326ad6021a036c3de9fcb",
+   "created_at": 1597558024.047,
+   "parts": 1,
+   "msatoshi": 10000,
+   "amount_msat": "10000msat",
+   "msatoshi_sent": 10000,
+   "amount_sent_msat": "10000msat",
+   "payment_preimage": "f6acfa0b712a7a4b0d307c62a621af3f38f4db4d26e1969aa4fe4a7083578a7b",
+   "status": "complete"
 }
 ```
 受け取った方は
 ```
-listinvoices
+lcli listinvoices
 {
    "invoices": [
       {
-         "label": "aaa",
-         "bolt11": "lnsb10u1p0tgy5xpp5knzslnnz57g9ewy05kugnef8d6ejjhm908wms6jzhsa5u9z2eegsdq9venxvxqyjw5qcqp2sp5njdxjp8jkx9djagjxq5ks5v9mms4xxtdjjed00renva02hpyy6ds9qy9qsq6ajtp928gqwm5xzy5f6kaeh8vpg2z8rksz4gq2hxlp72mc9ugv2ru4atrgtsywplsyn0mmw9jrrnddlfr6dkzp8ezaxqe2znqy8mpgcpny3nf2",
-         "payment_hash": "b4c50fce62a7905cb88fa5b889e5276eb3295f6579ddb86a42bc3b4e144ace51",
-         "msatoshi": 1000000,
-         "amount_msat": "1000000msat",
-         "status": "expired",
-         "description": "fff",
-         "expires_at": 1589464326
-      },
-      {
-         "label": "testr",
-         "bolt11": "lnsb100n1p0w7aszpp5yh9at6xlf5g3ds9are3s9pqepcpqnqngl2yspr8qwvrmqas40qwqdq0w3jhxar5v4ehgusxqyjw5qcqp2sp5937u8ey8hysgnkrrajp4e3a8n99fcjtva3mmv8tcrqe29uh65ljq9qy9qsqjargqx7ms8pudfkc0ye5qx6mj6ass9mn4a4h06l2aqm24sw7an6yykfhle43f79qtp8ckea4v8kafnxe22gjpckz2a94lh3eg978s0gpradgsq",
-         "payment_hash": "25cbd5e8df4d1116c0bd1e630284190e02098268fa89008ce07307b07615781c",
+         "label": "test",
+         "bolt11": "lnsb100n1p0n3ny3pp5xkg9up3p9clwcxt8m8d4drgz8m2smq25ccpjdttqyxsrds77nl9sdq8w3jhxaqxqyjw5qcqp2sp50nj0hugzz054z6rpnfr3094jwa6ahg20r60s3c0eyucvewca0c5s9qy9qsqlp4xu032sr6dmqa35306cal45wd35zmkeyvxd5quqyau0shqf6g39mu8mfq9f2hmw4tz02sys7z7jevlfz439gpqmafqsxadv342qhqp9u6lcc",
+         "payment_hash": "35905e06212e3eec1967d9db568d023ed50d8154c60326ad6021a036c3de9fcb",
          "msatoshi": 10000,
          "amount_msat": "10000msat",
          "status": "paid",
          "pay_index": 1,
          "msatoshi_received": 10000,
          "amount_received_msat": "10000msat",
-         "paid_at": 1592751676,
-         "payment_preimage": "decb3a48e9f95da2e1e0ea5dcc1ac3dd52ac9f76b139fd300d402c7274bc4ac7",
-         "description": "testtestr",
-         "expires_at": 1593356418
-      },
+         "paid_at": 1597558024,
+         "payment_preimage": "f6acfa0b712a7a4b0d307c62a621af3f38f4db4d26e1969aa4fe4a7083578a7b",
+         "description": "test",
+         "expires_at": 1598162705
+      }
+   ]
+}
 ```
 で資金を受け取っていることを確認
 
