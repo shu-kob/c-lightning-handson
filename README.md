@@ -33,6 +33,12 @@ cd c-lightning-handson
 
 ### 6月ご参加の方、ローカルにリポジトリがある方はこちら
 
+Signetがリセットされているため、旧signetのデータを消してください。
+
+```
+cd docker-signet
+rm -rf signet
+```
 ```
 cd c-lightning-handson
 git pull
