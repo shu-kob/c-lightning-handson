@@ -106,9 +106,9 @@ lcli getinfo
 
 ```
 {
-   "id": "03e3f432238c431ac66f1080560d6426b450d3cd63279cf4ee002044bbe860834e",
-   "alias": "SLIMYWATCH",
-   "color": "03e3f4",
+   "id": "02f15b34c18d0e1d41879af15b0b8aeeb646d1266445d2f9fa806befe16417197c",
+   "alias": "SILENTCHIPMUNK",
+   "color": "02f15b",
    "num_peers": 0,
    "num_pending_channels": 0,
    "num_active_channels": 0,
@@ -126,8 +126,8 @@ lcli getinfo
          "port": 9735
       }
    ],
-   "version": "0.8.2.1",
-   "blockheight": 15393,
+   "version": "0.9.0-1",
+   "blockheight": 1013,
    "network": "signet",
    "msatoshi_fees_collected": 0,
    "fees_collected_msat": "0msat",
@@ -135,22 +135,11 @@ lcli getinfo
 }
 ```
 
-### Dockerの中に入る場合は、別のターミナルを開き下記のコマンド
+### 参考）Dockerの中に入る場合は、別のターミナルを開き下記のコマンド
 
 ```
 ID=$(docker ps -q)
 docker exec -i -t $ID bash
-```
-
-### 参考）エイリアスとカラー
-~/.lightning/config
-でLightning Nodeのエイリアスと色を設定できる（Dockerの中に入るのが必要）
-
-例）
-```
-alias=Aquamarine
-rgb=7FFFD4
-network=signet
 ```
 
 ### c-lightningウォレットに入金するため、アドレスを発行
@@ -158,10 +147,9 @@ network=signet
 ```
 lcli newaddr
 {
-   "address": "sb1qll2ssyjnklvapqpmapyq0dwnhtp4p8g9a0r8rh",
-   "bech32": "sb1qll2ssyjnklvapqpmapyq0dwnhtp4p8g9a0r8rh"
+   "address": "sb1qa0p37nztzp6m6kv4kemmvdymjs2zezum05g2q9",
+   "bech32": "sb1qa0p37nztzp6m6kv4kemmvdymjs2zezum05g2q9"
 }
-
 ```
 
 ### Signet Faucetに上記で得たアドレスをコピペして、Signet用BTCを入手
@@ -188,16 +176,19 @@ lcli listfunds
 
 1承認後（Signetの場合はどのブロックも生成間隔がほぼ10分)
 ```
+lcli listfunds
 {
    "outputs": [
       {
-         "txid": "094958065057e48342dfb3e40a5cda15a7a44847f11f7186752741ff33e8d160",
-         "output": 0,
+         "txid": "1fac38170d24a7e5905e8b88ff6db3af98b91b496153e60bb516c61423144a68",
+         "output": 1,
          "value": 1000000000,
          "amount_msat": "1000000000000msat",
-         "address": "sb1qll2ssyjnklvapqpmapyq0dwnhtp4p8g9a0r8rh",
+         "scriptpubkey": "0014ebc31f4c4b1075bd5995b677b6349b94142c8b9b",
+         "address": "sb1qa0p37nztzp6m6kv4kemmvdymjs2zezum05g2q9",
          "status": "confirmed",
-         "blockheight": 15294
+         "blockheight": 1014,
+         "reserved": false
       }
    ],
    "channels": []
@@ -214,7 +205,7 @@ lcli listnodes
 }
 ```
 
-ない場合は。
+ない場合は
 ```
 031c94cba9161457236a6df85d6c890e82f1dcbf5729e80f06c318f94139f17015@153.126.144.46:9735
 ```
@@ -237,9 +228,9 @@ lcli connect 031c94cba9161457236a6df85d6c890e82f1dcbf5729e80f06c318f94139f17015@
 ```
 lcli fundchannel 031c94cba9161457236a6df85d6c890e82f1dcbf5729e80f06c318f94139f17015 100000
 {
-   "tx": "02000000000101824b3fcde7ea3dabf1cda9dc3c3dbcb9620be10c5e19c11c30d163689c2e8f4b0100000000feffffff02a0860100000000002200207c17946c68a32bbe0dd345ad1c70f51209c72a1dacfd742e4be6c3178fc69936c642993b00000000160014e320904b02b6bb8bbfa60ee9ee74085382fb2fa002473044022017867d12f7f0b3341410650ec403031b0664f45c62c4ccde53a5f3b5aca809b402203a11218bda9795414185e9889b3b6bc8667e9d1f5d071cf256d3892d1f842615012103d371db825181b528a934e0cf56ece2c6a00b192ff8842b75add58b096293d35b3c030000",
-   "txid": "413884d7c2ffdf18d9867e3e6c61a037609250bee63f7175f4547eac43b3ab22",
-   "channel_id": "22abb343ac7e54f475713fe6be50926037a0616c3e7e86d918dfffc2d7843841"
+   "tx": "02000000000101684a142314c616b50be65361491bb998afb36dff888b5e90e5a7240d1738ac1f0100000000feffffff02a086010000000000220020ee26fe5b118833f83c02cef110f961b07343779878f4b776187f15f955fba8f8c642993b000000001600144e0e9980ed1e9247d6676b2a1dd35bb0d31b90e602473044022031e4e922850f497ead2b253b4522d80d4e8ce846bbecb9f4e0ad91a6578be3f602201aff23fd05e1a9c4e9db4514cb0fc8a45f65bbf967283ab50b11ae99dd090019012103d731d8fd405616f4072874b056ab79348d94f9f540a55983f804aa5169a57ed5f6030000",
+   "txid": "8025b931111ef199e4e47b2183ff9ce32bf15370c751ebc593e12786f76082ca",
+   "channel_id": "ca8260f78627e193c5eb51c77053f12be39cff83217be4e499f11e1131b92580"
 }
 ```
 
@@ -248,7 +239,9 @@ lcli listpeers
 ```
 
 ```
-"CHANNELD_AWAITING_LOCKIN:Funding needs 1 more confirmations for lockin."
+"status": [
+   "CHANNELD_AWAITING_LOCKIN:Funding needs 1 more confirmations for lockin."
+],
 ```
 
 これはLightningにデポジットするのをロック中という意味で、
@@ -256,9 +249,9 @@ Signetの場合、1承認で
 ```
 "CHANNELD_NORMAL:Funding transaction locked."
 ```
-となる。Testnetの場合3承認。
+となる。ちなみにTestnetの場合3承認。Mainnetの場合は6承認。
 
-Invoiceを発行して、送ってもらう。
+Invoice(請求書)を発行して、送ってもらう。
 
 ```
 lcli invoice 50000000 "test" "test"
