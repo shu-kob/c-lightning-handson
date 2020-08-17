@@ -380,7 +380,12 @@ lcli pay lnsb50n1p0n4zvypp5rwamypndljfu2kp78g7udnex7rryj4ah3rytefmxvcqpeqduwemqd
 }
 ```
 
-Invoiceと一緒にIDを共有しましょう
+Invoiceと一緒にIDを共有する
+```
+lcli getinfo
+```
+でIDを取得
+
 ```
 "id": "02605b52c049f80135dd0d4fad1fcb97c9b789bff2794696152a74dc9cacf27587",
 "bolt11": "lnsb120n1p0n4ry0pp54mrg9vc5zteagqesy87msrs03drqqrmtqxz0rs8u8z8q33m4l5yqdq8w3jhxaqxqyjw5qcqp2sp57vaymp98a63nlnvjhvyfwcqr0zzmhm3a63n6xx9aqm5qyjd86mcq9qy9qsqkxskfxlj7npfpzt95l0djcykp8evmjf0s6vmw7gy0ju9wnhws03xcgf5hw6rtzcemh445treruvzuwecm7tqvc5jrlcfa72rq3etxzsp9gsjz6"
@@ -426,6 +431,7 @@ lcli listnodes
 }
 ```
 
+IDがネットワーク上に見つかれば支払いができた
 ```
 lcli pay lnsb120n1p0n4ry0pp54mrg9vc5zteagqesy87msrs03drqqrmtqxz0rs8u8z8q33m4l5yqdq8w3jhxaqxqyjw5qcqp2sp57vaymp98a63nlnvjhvyfwcqr0zzmhm3a63n6xx9aqm5qyjd86mcq9qy9qsqkxskfxlj7npfpzt95l0djcykp8evmjf0s6vmw7gy0ju9wnhws03xcgf5hw6rtzcemh445treruvzuwecm7tqvc5jrlcfa72rq3etxzsp9gsjz6
 {
@@ -458,26 +464,28 @@ lcli listfunds
 {
    "outputs": [
       {
-         "txid": "12e8b124ba1367e72793a9e1815a8b8a9581a8e83e3280caf9fc3c7e9b98f946",
+         "txid": "8025b931111ef199e4e47b2183ff9ce32bf15370c751ebc593e12786f76082ca",
          "output": 1,
-         "value": 1999899846,
-         "amount_msat": "1999899846000msat",
-         "address": "sb1qrkehc98qen3t4wscy3yqvqm2qs67xnprh29q26",
+         "value": 999899846,
+         "amount_msat": "999899846000msat",
+         "scriptpubkey": "00144e0e9980ed1e9247d6676b2a1dd35bb0d31b90e6",
+         "address": "sb1qfc8fnq8dr6fy04n8dv4pm56mkrf3hy8x4hnqrm",
          "status": "confirmed",
-         "blockheight": 15423
+         "blockheight": 1015,
+         "reserved": false
       }
    ],
    "channels": [
       {
-         "peer_id": "02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972",
+         "peer_id": "031c94cba9161457236a6df85d6c890e82f1dcbf5729e80f06c318f94139f17015",
          "connected": true,
          "state": "CHANNELD_NORMAL",
-         "short_channel_id": "15423x1x0",
-         "channel_sat": 99899,
-         "our_amount_msat": "99899000msat",
+         "short_channel_id": "1015x1x0",
+         "channel_sat": 49982,
+         "our_amount_msat": "49982000msat",
          "channel_total_sat": 100000,
          "amount_msat": "100000000msat",
-         "funding_txid": "12e8b124ba1367e72793a9e1815a8b8a9581a8e83e3280caf9fc3c7e9b98f946",
+         "funding_txid": "8025b931111ef199e4e47b2183ff9ce32bf15370c751ebc593e12786f76082ca",
          "funding_output": 0
       }
    ]
@@ -487,11 +495,12 @@ lcli listfunds
 
 ### チャンネルをクローズする際は以下
 
+接続先のIDを指定
 ```
-lcli close 02e5db87cad8761fe5fe7cadfb3c9393098e217db3d8a00500565fe6b8ea040972
+lcli close 031c94cba9161457236a6df85d6c890e82f1dcbf5729e80f06c318f94139f17015
 {
-   "tx": "020000000146f9989b7e3cfcf9ca80323ee8a881958a8b5a81e1a99327e76713ba24b1e8120000000000ffffffff018485010000000000160014b9acff5dfb4a684414409d9dc2ff0a64ac0cf43800000000",
-   "txid": "641a41b2214a7b876f06dc30242a289084a1d61cc8d4789b432172ad7af3015a",
+   "tx": "0200000001ca8260f78627e193c5eb51c77053f12be39cff83217be4e499f11e1131b925800000000000ffffffff0287c200000000000016001455597ef90cf039e0b9f713b2d0447ceab6b7e28161c30000000000001600140d52ba407fe2b310a24bd47d12c3d8277fb0119100000000",
+   "txid": "3a5053389b638227414d408cd6bda6c5dd06680530851b282a6d9f3df751a976",
    "type": "mutual"
 }
 ```
