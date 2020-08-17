@@ -380,6 +380,11 @@ lcli pay lnsb50n1p0n4zvypp5rwamypndljfu2kp78g7udnex7rryj4ah3rytefmxvcqpeqduwemqd
 }
 ```
 
+Invoiceと一緒にIDを共有しましょう
+```
+"id": "02605b52c049f80135dd0d4fad1fcb97c9b789bff2794696152a74dc9cacf27587",
+"bolt11": "lnsb120n1p0n4ry0pp54mrg9vc5zteagqesy87msrs03drqqrmtqxz0rs8u8z8q33m4l5yqdq8w3jhxaqxqyjw5qcqp2sp57vaymp98a63nlnvjhvyfwcqr0zzmhm3a63n6xx9aqm5qyjd86mcq9qy9qsqkxskfxlj7npfpzt95l0djcykp8evmjf0s6vmw7gy0ju9wnhws03xcgf5hw6rtzcemh445treruvzuwecm7tqvc5jrlcfa72rq3etxzsp9gsjz6"
+```
 
 
 ## ヘルプ
