@@ -251,7 +251,7 @@ Signetの場合、1承認で
 ```
 となる。ちなみにTestnetの場合3承認。Mainnetの場合は6承認。
 
-Invoice(請求書)を発行して、送ってもらう。
+講師がInvoice(請求書)を発行する。
 
 ```
 lcli invoice 50000000 "test55" "signet"
@@ -269,7 +269,7 @@ lcli invoice 50000000 "test55" "signet"
 
 となっている場合は、fundingTXの承認待ち。しばらく待つ。
 
-送る方はpayコマンドを叩く
+参加者（送る方）はpayコマンドを叩く
 
 ```
 lcli pay lnsb500u1p0n4plcpp5e3mfh57ayhqxe77e6ahq3v2nfmh22fqdu479whsted03z4wv9ycqdq2wd5kwmn9wsxqyjw5qcqp2sp5pywnduz0vpq3cha257klk3qul5f9q35m47lt95t76vuewjn4dm3s9qy9qsqcf2hwc50xlch40zq8efcec88xc4g6yddfdyxxtnauaxhpl5p94nxfxmzudxg26w5yg93dher3yd27arlragtymh4065nkj0pcmpw7dqqyczz4x
@@ -286,7 +286,7 @@ lcli pay lnsb500u1p0n4plcpp5e3mfh57ayhqxe77e6ahq3v2nfmh22fqdu479whsted03z4wv9ycq
    "status": "complete"
 }
 ```
-受け取った方は
+受け取った方（講師）は
 ```
 lcli listinvoices
 {
@@ -321,7 +321,7 @@ lcli listinvoices
 ```
 は支払いがされたもの
 
-支払い時、以下はルートが見つからないエラー
+参考）支払い時、以下はルートが見つからないエラー
 支払いのために十分なL-BTC(LN上のBTC)を持っていないことが原因
 30Ksatoshi(30000satoshi=30000000msat)必要？
 ```
@@ -338,6 +338,47 @@ lightning-cli pay lnsb50n1p0n3nt4pp5jxmw5gnae3up8fllnkfgthd2kksdjcg8ldmud6l8ls63
       }
    ]
 }
+```
+
+今度は参加者がInvoiceを発行して、誰かに送ってもらう
+
+```
+lcli invoice 5000 "test33" "test"
+{
+   "payment_hash": "1bbbb2066dfc93c5583e3a3dc6cf26f0c64957b788c8bca76666001c81bc7676",
+   "expires_at": 1598276612,
+   "bolt11": "lnsb50n1p0n4zvypp5rwamypndljfu2kp78g7udnex7rryj4ah3rytefmxvcqpeqduwemqdq8w3jhxaqxqyjw5qcqp2sp5wun2mexjt2hyqzettfafjw8u42yrzaw58lzeu5rqnxcwjnftp4ns9qy9qsqkrea3x02sjreuvz8mvm48ev9gr8wf03h6t686e9mhd5r7tu2dr45hekxlhctvlftpdwh6zpg3hxywlrek6tsetf4ffwtjldc5w05ahcqsns7z4",
+   "warning_deadends": "No channel with a peer that is not a dead end"
+}
+```
+"bolt11"を共有して誰かに送ってもらう
+
+```
+lcli pay lnsb50n1p0n4zvypp5rwamypndljfu2kp78g7udnex7rryj4ah3rytefmxvcqpeqduwemqdq8w3jhxaqxqyjw5qcqp2sp5wun2mexjt2hyqzettfafjw8u42yrzaw58lzeu5rqnxcwjnftp4ns9qy9qsqkrea3x02sjreuvz8mvm48ev9gr8wf03h6t686e9mhd5r7tu2dr45hekxlhctvlftpdwh6zpg3hxywlrek6tsetf4ffwtjldc5w05ahcqsns7z4
+```
+
+以下はエラーで送れていない。
+```
+{
+   "code": 210,
+   "message": "Ran out of routes to try after 11 attempts: see `paystatus`",
+   "attempts": [
+      {
+         "status": "failed",
+         "failreason": "Error computing a route to 02f15b34c18d0e1d41879af15b0b8aeeb646d1266445d2f9fa806befe16417197c: \"Could not find a route\" (205)",
+         "partid": 1,
+         "amount": "5000msat"
+      },
+      {
+         "status": "failed",
+         "failreason": "Error computing a route to 02f15b34c18d0e1d41879af15b0b8aeeb646d1266445d2f9fa806befe16417197c: \"Could not find a route\" (205)",
+         "partid": 2,
+         "amount": "5000msat",
+         "parent_partid": 1
+      }
+   ]
+}
+
 ```
 
 ## ヘルプ
