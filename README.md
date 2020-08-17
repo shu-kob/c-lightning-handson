@@ -505,6 +505,52 @@ lcli close 031c94cba9161457236a6df85d6c890e82f1dcbf5729e80f06c318f94139f17015
 }
 ```
 
+Txが1承認後、channelのstateがONCHAINとなる
+outputsの1つ目のTxがfundTx、2つ目のTxがcloseTx
+```
+$ lcli listfunds
+{
+   "outputs": [
+      {
+         "txid": "8025b931111ef199e4e47b2183ff9ce32bf15370c751ebc593e12786f76082ca",
+         "output": 1,
+         "value": 999899846,
+         "amount_msat": "999899846000msat",
+         "scriptpubkey": "00144e0e9980ed1e9247d6676b2a1dd35bb0d31b90e6",
+         "address": "sb1qfc8fnq8dr6fy04n8dv4pm56mkrf3hy8x4hnqrm",
+         "status": "confirmed",
+         "blockheight": 1015,
+         "reserved": false
+      },
+      {
+         "txid": "3a5053389b638227414d408cd6bda6c5dd06680530851b282a6d9f3df751a976",
+         "output": 0,
+         "value": 49799,
+         "amount_msat": "49799000msat",
+         "scriptpubkey": "001455597ef90cf039e0b9f713b2d0447ceab6b7e281",
+         "address": "sb1q24vha7gv7qu7pw0hzwedq3rua2mt0c5p9q98jw",
+         "status": "confirmed",
+         "blockheight": 1019,
+         "reserved": false
+      }
+   ],
+   "channels": [
+      {
+         "peer_id": "031c94cba9161457236a6df85d6c890e82f1dcbf5729e80f06c318f94139f17015",
+         "connected": false,
+         "state": "ONCHAIN",
+         "short_channel_id": "1015x1x0",
+         "channel_sat": 49982,
+         "our_amount_msat": "49982000msat",
+         "channel_total_sat": 100000,
+         "amount_msat": "100000000msat",
+         "funding_txid": "8025b931111ef199e4e47b2183ff9ce32bf15370c751ebc593e12786f76082ca",
+         "funding_output": 0
+      }
+   ]
+}
+```
+
 ## c-lightningウォレットからの資金引き出し
 
 ```
