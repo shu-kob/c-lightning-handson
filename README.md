@@ -240,7 +240,7 @@ Signetの場合、1承認で
 Invoiceを発行して、送ってもらう。
 
 ```
-lcli invoice 10000 "test" "test"
+lcli invoice 50000000 "test" "test"
 {
    "payment_hash": "35905e06212e3eec1967d9db568d023ed50d8154c60326ad6021a036c3de9fcb",
    "expires_at": 1598162705,
@@ -265,10 +265,10 @@ lcli pay lnsb100n1p0n3ny3pp5xkg9up3p9clwcxt8m8d4drgz8m2smq25ccpjdttqyxsrds77nl9s
    "payment_hash": "35905e06212e3eec1967d9db568d023ed50d8154c60326ad6021a036c3de9fcb",
    "created_at": 1597558024.047,
    "parts": 1,
-   "msatoshi": 10000,
-   "amount_msat": "10000msat",
-   "msatoshi_sent": 10000,
-   "amount_sent_msat": "10000msat",
+   "msatoshi": 50000000,
+   "amount_msat": "50000000msat",
+   "msatoshi_sent": 50000000,
+   "amount_sent_msat": "50000000msat",
    "payment_preimage": "f6acfa0b712a7a4b0d307c62a621af3f38f4db4d26e1969aa4fe4a7083578a7b",
    "status": "complete"
 }
@@ -282,12 +282,12 @@ lcli listinvoices
          "label": "test",
          "bolt11": "lnsb100n1p0n3ny3pp5xkg9up3p9clwcxt8m8d4drgz8m2smq25ccpjdttqyxsrds77nl9sdq8w3jhxaqxqyjw5qcqp2sp50nj0hugzz054z6rpnfr3094jwa6ahg20r60s3c0eyucvewca0c5s9qy9qsqlp4xu032sr6dmqa35306cal45wd35zmkeyvxd5quqyau0shqf6g39mu8mfq9f2hmw4tz02sys7z7jevlfz439gpqmafqsxadv342qhqp9u6lcc",
          "payment_hash": "35905e06212e3eec1967d9db568d023ed50d8154c60326ad6021a036c3de9fcb",
-         "msatoshi": 10000,
-         "amount_msat": "10000msat",
+         "msatoshi": 50000000,
+         "amount_msat": "50000000msat",
          "status": "paid",
          "pay_index": 1,
-         "msatoshi_received": 10000,
-         "amount_received_msat": "10000msat",
+         "msatoshi_received": 50000000,
+         "amount_received_msat": "50000000msat",
          "paid_at": 1597558024,
          "payment_preimage": "f6acfa0b712a7a4b0d307c62a621af3f38f4db4d26e1969aa4fe4a7083578a7b",
          "description": "test",
@@ -309,6 +309,8 @@ lcli listinvoices
 は支払いがされたもの
 
 支払い時、以下はルートが見つからないエラー
+支払いのために十分なL-BTC(LN上のBTC)を持っていないことが原因
+30Ksatoshi(30000satoshi=30000000msat)必要？
 ```
 lightning-cli pay lnsb50n1p0n3nt4pp5jxmw5gnae3up8fllnkfgthd2kksdjcg8ldmud6l8ls63lnrdhxasdq8w3jhxaqxqyjw5qcqp2sp52q3lqjlkyfduq7w94tn9fl2l58yxddqqag6dj95jdufgw73ehm7q9qy9qsqrzv3k33hnjv0ae55p2zt4jvghr7kejmud03ucf7p0d7r96sv2fljzzput9pde3pncjlhuqhgfrphx28fdectgpcc9npzjummly450jspx730th
 {
