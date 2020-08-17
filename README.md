@@ -254,14 +254,13 @@ Signetの場合、1承認で
 Invoice(請求書)を発行して、送ってもらう。
 
 ```
-lcli invoice 50000000 "test" "test"
+lcli invoice 50000000 "test55" "signet"
 {
-   "payment_hash": "35905e06212e3eec1967d9db568d023ed50d8154c60326ad6021a036c3de9fcb",
-   "expires_at": 1598162705,
-   "bolt11": "lnsb100n1p0n3ny3pp5xkg9up3p9clwcxt8m8d4drgz8m2smq25ccpjdttqyxsrds77nl9sdq8w3jhxaqxqyjw5qcqp2sp50nj0hugzz054z6rpnfr3094jwa6ahg20r60s3c0eyucvewca0c5s9qy9qsqlp4xu032sr6dmqa35306cal45wd35zmkeyvxd5quqyau0shqf6g39mu8mfq9f2hmw4tz02sys7z7jevlfz439gpqmafqsxadv342qhqp9u6lcc",
+   "payment_hash": "cc769bd3dd25c06cfbd9d76e08b1534eeea5240de57c575e0bcb5f1155cc2930",
+   "expires_at": 1598276216,
+   "bolt11": "lnsb500u1p0n4plcpp5e3mfh57ayhqxe77e6ahq3v2nfmh22fqdu479whsted03z4wv9ycqdq2wd5kwmn9wsxqyjw5qcqp2sp5pywnduz0vpq3cha257klk3qul5f9q35m47lt95t76vuewjn4dm3s9qy9qsqcf2hwc50xlch40zq8efcec88xc4g6yddfdyxxtnauaxhpl5p94nxfxmzudxg26w5yg93dher3yd27arlragtymh4065nkj0pcmpw7dqqyczz4x",
    "warning_deadends": "No channel with a peer that is not a dead end"
 }
-
 ```
 
 ```
@@ -273,17 +272,17 @@ lcli invoice 50000000 "test" "test"
 送る方はpayコマンドを叩く
 
 ```
-lcli pay lnsb100n1p0n3ny3pp5xkg9up3p9clwcxt8m8d4drgz8m2smq25ccpjdttqyxsrds77nl9sdq8w3jhxaqxqyjw5qcqp2sp50nj0hugzz054z6rpnfr3094jwa6ahg20r60s3c0eyucvewca0c5s9qy9qsqlp4xu032sr6dmqa35306cal45wd35zmkeyvxd5quqyau0shqf6g39mu8mfq9f2hmw4tz02sys7z7jevlfz439gpqmafqsxadv342qhqp9u6lcc
+lcli pay lnsb500u1p0n4plcpp5e3mfh57ayhqxe77e6ahq3v2nfmh22fqdu479whsted03z4wv9ycqdq2wd5kwmn9wsxqyjw5qcqp2sp5pywnduz0vpq3cha257klk3qul5f9q35m47lt95t76vuewjn4dm3s9qy9qsqcf2hwc50xlch40zq8efcec88xc4g6yddfdyxxtnauaxhpl5p94nxfxmzudxg26w5yg93dher3yd27arlragtymh4065nkj0pcmpw7dqqyczz4x
 {
    "destination": "031c94cba9161457236a6df85d6c890e82f1dcbf5729e80f06c318f94139f17015",
-   "payment_hash": "35905e06212e3eec1967d9db568d023ed50d8154c60326ad6021a036c3de9fcb",
-   "created_at": 1597558024.047,
+   "payment_hash": "cc769bd3dd25c06cfbd9d76e08b1534eeea5240de57c575e0bcb5f1155cc2930",
+   "created_at": 1597671864.509,
    "parts": 1,
    "msatoshi": 50000000,
    "amount_msat": "50000000msat",
    "msatoshi_sent": 50000000,
    "amount_sent_msat": "50000000msat",
-   "payment_preimage": "f6acfa0b712a7a4b0d307c62a621af3f38f4db4d26e1969aa4fe4a7083578a7b",
+   "payment_preimage": "18d7af61cdabb87a588d6b8c4dd561208c156cfed86be7df0b42862b64dabe8c",
    "status": "complete"
 }
 ```
@@ -292,20 +291,20 @@ lcli pay lnsb100n1p0n3ny3pp5xkg9up3p9clwcxt8m8d4drgz8m2smq25ccpjdttqyxsrds77nl9s
 lcli listinvoices
 {
    "invoices": [
-      {
-         "label": "test",
-         "bolt11": "lnsb100n1p0n3ny3pp5xkg9up3p9clwcxt8m8d4drgz8m2smq25ccpjdttqyxsrds77nl9sdq8w3jhxaqxqyjw5qcqp2sp50nj0hugzz054z6rpnfr3094jwa6ahg20r60s3c0eyucvewca0c5s9qy9qsqlp4xu032sr6dmqa35306cal45wd35zmkeyvxd5quqyau0shqf6g39mu8mfq9f2hmw4tz02sys7z7jevlfz439gpqmafqsxadv342qhqp9u6lcc",
-         "payment_hash": "35905e06212e3eec1967d9db568d023ed50d8154c60326ad6021a036c3de9fcb",
+{
+         "label": "test55",
+         "bolt11": "lnsb500u1p0n4plcpp5e3mfh57ayhqxe77e6ahq3v2nfmh22fqdu479whsted03z4wv9ycqdq2wd5kwmn9wsxqyjw5qcqp2sp5pywnduz0vpq3cha257klk3qul5f9q35m47lt95t76vuewjn4dm3s9qy9qsqcf2hwc50xlch40zq8efcec88xc4g6yddfdyxxtnauaxhpl5p94nxfxmzudxg26w5yg93dher3yd27arlragtymh4065nkj0pcmpw7dqqyczz4x",
+         "payment_hash": "cc769bd3dd25c06cfbd9d76e08b1534eeea5240de57c575e0bcb5f1155cc2930",
          "msatoshi": 50000000,
          "amount_msat": "50000000msat",
          "status": "paid",
-         "pay_index": 1,
+         "pay_index": 4,
          "msatoshi_received": 50000000,
          "amount_received_msat": "50000000msat",
-         "paid_at": 1597558024,
-         "payment_preimage": "f6acfa0b712a7a4b0d307c62a621af3f38f4db4d26e1969aa4fe4a7083578a7b",
-         "description": "test",
-         "expires_at": 1598162705
+         "paid_at": 1597671446,
+         "payment_preimage": "18d7af61cdabb87a588d6b8c4dd561208c156cfed86be7df0b42862b64dabe8c",
+         "description": "signet",
+         "expires_at": 1598276216
       }
    ]
 }
