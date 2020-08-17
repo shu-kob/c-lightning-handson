@@ -9,6 +9,10 @@ if [ ! -e "$BITCOIN_DATA/bitcoin.conf" ]; then
     echo "network=signet" > $LIGHTNING_DATA/config
 fi
 
+if [ ! -e "$LIGHTNING_DATA/config" ]; then
+    echo "network=signet" >> $LIGHTNING_DATA/config
+fi
+
 if [ $(echo "$1" | cut -c1) = "-" ]; then
   echo "$0: assuming arguments for bitcoind"
   set -- bitcoind "$@"

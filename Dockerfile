@@ -5,8 +5,6 @@ RUN wget https://github.com/ElementsProject/lightning/releases/download/v0.9.0-1
 RUN tar -xvf clightning-v0.9.0-1-Ubuntu-18.04.tar.xz
 RUN chmod +x /usr/bin/lightning*
 
-COPY ./config /root/.lightning/config
-
 RUN apt-get update -y \
     && apt-get install -y \
         automake \
@@ -61,5 +59,7 @@ COPY docker-entrypoint.sh /entrypoint.sh
 EXPOSE 8332 8333 18332 18333 18443 18444 38332 38333 9735
 
 ENTRYPOINT ["/entrypoint.sh"]
+
+COPY ./config ${LIGHTNING_DATA}/config
 
 CMD ["bitcoind"]
