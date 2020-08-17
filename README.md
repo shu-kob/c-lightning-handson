@@ -26,13 +26,27 @@ https://www.microsoft.com/ja-jp/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewta
 
 ## Dockerfileなどをダウンロードしてセットアップ
 
-### Signet対応のbitcoindとc-lightningをインストールしたDockerをビルド
-
 ```
 git clone https://github.com/shu-kob/c-lightning-handson
 cd c-lightning-handson
+```
+
+### 6月ご参加の方、ローカルにリポジトリがある方はこちら
+
+```
+cd c-lightning-handson
+git pull
+```
+
+### Signet対応のbitcoindとc-lightningをインストールしたDockerをビルド
+
+Signetがリセットされており、新ネットワークに接続するため、前回ご参加の方も再度ビルドしてください。
+c-lightningのVer.も0.8.2から0.9.0.1に上げています。
+
+```
 ./build.sh
 ```
+
 
 ### ビルドが終わったらDocker起動（bitcoindが起動する)
 
