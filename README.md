@@ -386,6 +386,62 @@ Invoiceと一緒にIDを共有しましょう
 "bolt11": "lnsb120n1p0n4ry0pp54mrg9vc5zteagqesy87msrs03drqqrmtqxz0rs8u8z8q33m4l5yqdq8w3jhxaqxqyjw5qcqp2sp57vaymp98a63nlnvjhvyfwcqr0zzmhm3a63n6xx9aqm5qyjd86mcq9qy9qsqkxskfxlj7npfpzt95l0djcykp8evmjf0s6vmw7gy0ju9wnhws03xcgf5hw6rtzcemh445treruvzuwecm7tqvc5jrlcfa72rq3etxzsp9gsjz6"
 ```
 
+支払う側はlistnodesでネットワーク上のIDを確認し、Inovoiceの発行主のIDが出てくれば支払いができるはず
+
+```
+lcli listnodes
+{
+   "nodes": [
+      {
+         "nodeid": "02605b52c049f80135dd0d4fad1fcb97c9b789bff2794696152a74dc9cacf27587",
+         "alias": "Aquamarine",
+         "color": "7fffd4",
+         "last_timestamp": 1597638778,
+         "features": "8000000002aaa2",
+         "addresses": []
+      },
+      {
+         "nodeid": "031c94cba9161457236a6df85d6c890e82f1dcbf5729e80f06c318f94139f17015",
+         "alias": "ORANGEBEAM",
+         "color": "ff8c00",
+         "last_timestamp": 1597560935,
+         "features": "8000000002aaa2",
+         "addresses": [
+            {
+               "type": "ipv4",
+               "address": "153.126.144.46",
+               "port": 9735
+            },
+            {
+               "type": "ipv6",
+               "address": "2401:2500:102:3008:153:126:144:46",
+               "port": 9735
+            }
+         ]
+      },
+      {
+         "nodeid": "02f15b34c18d0e1d41879af15b0b8aeeb646d1266445d2f9fa806befe16417197c"
+      }
+   ]
+}
+```
+
+```
+lcli pay lnsb120n1p0n4ry0pp54mrg9vc5zteagqesy87msrs03drqqrmtqxz0rs8u8z8q33m4l5yqdq8w3jhxaqxqyjw5qcqp2sp57vaymp98a63nlnvjhvyfwcqr0zzmhm3a63n6xx9aqm5qyjd86mcq9qy9qsqkxskfxlj7npfpzt95l0djcykp8evmjf0s6vmw7gy0ju9wnhws03xcgf5hw6rtzcemh445treruvzuwecm7tqvc5jrlcfa72rq3etxzsp9gsjz6
+{
+   "destination": "02605b52c049f80135dd0d4fad1fcb97c9b789bff2794696152a74dc9cacf27587",
+   "payment_hash": "aec682b31412f3d4033021fdb80e0f8b46000f6b0184f1c0fc388e08c775fd08",
+   "created_at": 1597673207.170,
+   "parts": 1,
+   "msatoshi": 12000,
+   "amount_msat": "12000msat",
+   "msatoshi_sent": 12001,
+   "amount_sent_msat": "12001msat",
+   "payment_preimage": "146ba8c2c5fc04dae2a7b2f121746b8747b497f0ddd8d42dc279f8acb1e96512",
+   "status": "complete"
+}
+```
+
 
 ## ヘルプ
 
