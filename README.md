@@ -47,7 +47,7 @@ git pull
 ### Signet対応のbitcoindとc-lightningをインストールしたDockerをビルド
 
 Signetがリセットされており、新ネットワークに接続するため、前回ご参加の方も再度ビルドしてください。
-c-lightningのVer.も0.8.2から0.9.0.1に上げています。
+c-lightningのVer.も0.8.2から0.9.0-1に上げています。
 
 ```
 ./build.sh
