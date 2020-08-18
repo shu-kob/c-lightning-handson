@@ -36,7 +36,9 @@ cd c-lightning-handson
 Signetがリセットされているため、旧signetのデータを消してください。
 
 ```
-cd docker-signet
+cd ~/docker-signet
+rm -rf signet
+cd ~/docker-lightning
 rm -rf signet
 ```
 ```
