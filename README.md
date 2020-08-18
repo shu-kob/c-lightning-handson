@@ -20,7 +20,7 @@ https://hub.docker.com/editions/community/docker-ce-desktop-mac
 
 https://qiita.com/youtangai/items/ff67ceff5497a0e0b1af
 
-###Windows10の方はUbuntuを入れた上で、上記「UbuntuにDockerとDocker-composeをインストール」
+### Windows10の方はUbuntuを入れた上で、上記「UbuntuにDockerとDocker-composeをインストール」
 
 https://www.microsoft.com/ja-jp/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab
 
