@@ -30,7 +30,7 @@ RUN apt-get update -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN git clone -b 2003-signet-consensus https://github.com/kallewoof/bitcoin/ /workspace
+RUN git clone https://github.com/bitcoin/bitcoin/ /workspace
 
 WORKDIR /workspace
 
