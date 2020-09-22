@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 
 RUN apt-get update -y && apt install -y wget xz-utils
-RUN wget https://github.com/ElementsProject/lightning/releases/download/v0.9.0-1/clightning-v0.9.0-1-Ubuntu-18.04.tar.xz
-RUN tar -xvf clightning-v0.9.0-1-Ubuntu-18.04.tar.xz
+RUN wget https://github.com/ElementsProject/lightning/releases/download/v0.9.1/clightning-v0.9.1-Ubuntu-18.04.tar.xz
+RUN tar -xvf clightning-v0.9.1-Ubuntu-18.04.tar.xz
 RUN chmod +x /usr/bin/lightning*
 
 RUN apt-get update -y \
@@ -30,7 +30,7 @@ RUN apt-get update -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN git clone -b 2003-signet-consensus https://github.com/kallewoof/bitcoin/ /workspace
+RUN git clone https://github.com/bitcoin/bitcoin/ /workspace
 
 WORKDIR /workspace
 
