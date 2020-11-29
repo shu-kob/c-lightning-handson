@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 
 RUN apt-get update -y && apt install -y wget xz-utils
-RUN wget https://github.com/ElementsProject/lightning/releases/download/v0.9.1/clightning-v0.9.1-Ubuntu-18.04.tar.xz
-RUN tar -xvf clightning-v0.9.1-Ubuntu-18.04.tar.xz
+RUN wget https://github.com/ElementsProject/lightning/releases/download/v0.9.2/clightning-v0.9.2-Ubuntu-18.04.tar.xz
+RUN tar -xvf clightning-v0.9.2-Ubuntu-18.04.tar.xz
 RUN chmod +x /usr/bin/lightning*
 
 RUN apt-get update -y \
